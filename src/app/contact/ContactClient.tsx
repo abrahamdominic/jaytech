@@ -113,7 +113,11 @@ export default function ContactClient() {
         body: JSON.stringify(data),
       })
 
-      if (!response.ok) throw new Error("Failed to send message")
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to send message")
+      }
 
       toast.success("Message sent successfully! We'll get back to you soon.")
       reset()
