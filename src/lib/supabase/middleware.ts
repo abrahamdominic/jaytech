@@ -6,10 +6,16 @@ export async function updateSession(request: NextRequest) {
     request,
   })
 
-  const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.error("Missing Supabase environment variables. Auth middleware bypassed.")
+    return supabaseResponse
+  }
+
+  try {
+    const supabase = createServerClient(supabaseUrl, supabaseAnonKey, {
       cookies: {
         getAll() {
           return request.cookies.getAll()
@@ -26,38 +32,40 @@ export async function updateSession(request: NextRequest) {
           )
         },
       },
-    }
-  )
+    })
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
 
-  const pathname = request.nextUrl.pathname
+    const pathname = request.nextUrl.pathname
 
-  if (
-    !user &&
-    (pathname.startsWith("/admin") ||
-      pathname.startsWith("/dashboard"))
-  ) {
-    const url = request.nextUrl.clone()
-    url.pathname = "/auth/login"
-    url.searchParams.set("redirect", pathname)
-    return NextResponse.redirect(url)
-  }
-
-  if (user && pathname.startsWith("/admin")) {
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("role")
-      .eq("id", user.id)
-      .single()
-
-    if (!profile || profile.role === "customer") {
+    if (
+      !user &&
+      (pathname.startsWith("/admin") ||
+        pathname.startsWith("/dashboard"))
+    ) {
       const url = request.nextUrl.clone()
-      url.pathname = "/dashboard"
+      url.pathname = "/auth/login"
+      url.searchParams.set("redirect", pathname)
       return NextResponse.redirect(url)
     }
+
+    if (user && pathname.startsWith("/admin")) {
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("role")
+        .eq("id", user.id)
+        .single()
+
+      if (!profile || profile.role === "customer") {
+        const url = request.nextUrl.clone()
+        url.pathname = "/dashboard"
+        return NextResponse.redirect(url)
+      }
+    }
+  } catch (error) {
+    console.error("Auth middleware error:", error)
   }
 
   return supabaseResponse
