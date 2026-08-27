@@ -47,7 +47,7 @@ const defaultServices: ServiceCard[] = [
   {
     title: "Starlink Installation",
     description:
-      "Get blazing-fast satellite internet with professional Starlink setup. Perfect for remote and underserved areas across Nigeria.",
+      "Get blazing fast satellite internet with professional Starlink setup. Perfect for remote and underserved areas across Nigeria.",
     icon: Wifi,
     image: "/images/jay5.jpg",
     slug: "starlink-installation",

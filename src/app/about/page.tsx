@@ -125,7 +125,7 @@ export default function AboutPage() {
               </h2>
               <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-primary" />
               <p className="mt-6 text-lg leading-relaxed text-muted">
-                Founded in Lagos, Nigeria, JayTech began with a simple mission:
+                Founded in Benue, Nigeria, JayTech began with a simple mission:
                 to make reliable energy and connectivity accessible to every
                 Nigerian. What started as a small team of passionate engineers
                 has grown into one of the country&apos;s leading solar and

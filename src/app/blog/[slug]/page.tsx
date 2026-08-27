@@ -58,7 +58,7 @@ const BLOG_FALLBACK = [
       "A complete guide to Starlink satellite internet in Nigeria including pricing, installation, and what to expect.",
     content: `<p>Starlink has been a game-changer for internet connectivity in Nigeria, especially in areas where traditional ISPs struggle to reach.</p>
 <h2>What is Starlink?</h2>
-<p>Starlink is a satellite internet constellation developed by SpaceX. It provides high-speed, low-latency broadband internet across the globe, including Nigeria.</p>
+<p>Starlink is a satellite internet constellation developed by SpaceX. It provides high speed, low latency broadband internet across the globe, including Nigeria.</p>
 <h2>Pricing in Nigeria</h2>
 <p>The Starlink kit costs around ₦350,000 for the hardware, with a monthly subscription of approximately ₦38,000. Prices may vary based on exchange rates.</p>
 <h2>Installation</h2>
