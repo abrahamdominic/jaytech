@@ -15,6 +15,7 @@ interface ServiceCard {
   title: string
   description: string
   icon?: LucideIcon
+  image?: string
   slug: string
 }
 
@@ -48,6 +49,7 @@ const defaultServices: ServiceCard[] = [
     description:
       "Get blazing-fast satellite internet with professional Starlink setup. Perfect for remote and underserved areas across Nigeria.",
     icon: Wifi,
+    image: "/images/jay5.jpg",
     slug: "starlink-installation",
   },
   {
@@ -108,8 +110,17 @@ export default function ServicesSection({ services = defaultServices }: Services
             <Link
               key={service.title}
               href={`/services/${service.slug}`}
-              className="group relative flex flex-col rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/30"
+              className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/30"
             >
+              {service.image && (
+                <div className="relative h-44 overflow-hidden bg-surface-dim">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                    style={{ backgroundImage: `url(${service.image})` }}
+                  />
+                </div>
+              )}
+              <div className="flex flex-1 flex-col p-6">
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
                 <Icon className="h-7 w-7 text-primary transition-colors duration-300 group-hover:text-white" />
               </div>
@@ -132,6 +143,7 @@ export default function ServicesSection({ services = defaultServices }: Services
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </span>
+              </div>
               </div>
             </Link>
             )

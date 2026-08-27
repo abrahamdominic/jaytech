@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import {
   Users,
@@ -7,6 +8,8 @@ import {
   MapPin,
   Award,
 } from "lucide-react"
+
+const heroBackgrounds = ["/images/jay1.jpg", "/images/jay2.jpg", "/images/jay3.jpg"]
 
 const stats = [
   { label: "Customers Served", value: 500, suffix: "+", icon: Users },
@@ -16,8 +19,32 @@ const stats = [
 ]
 
 export default function HeroSection() {
+  const [active, setActive] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => (prev + 1) % heroBackgrounds.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <section className="relative min-h-[90vh] flex flex-col justify-center overflow-hidden bg-gradient-to-br from-secondary via-secondary-light to-secondary">
+      {/* Rotating background images */}
+      <div className="absolute inset-0 pointer-events-none">
+        {heroBackgrounds.map((src, i) => (
+          <div
+            key={src}
+            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+              i === active ? "opacity-100" : "opacity-0"
+            }`}
+            style={{ backgroundImage: `url(${src})` }}
+            aria-hidden="true"
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-br from-secondary/95 via-secondary/85 to-secondary/80" />
+      </div>
+
       {/* Decorative floating elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-32 -right-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl animate-fade-in" />

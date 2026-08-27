@@ -67,7 +67,7 @@ const values = [
 
 const teamMembers = [
   {
-    name: "Adebayo Johnson",
+    name: "Ebije Johnson",
     role: "Founder & CEO",
     description:
       "Passionate about bringing reliable energy solutions to every Nigerian home and business.",
