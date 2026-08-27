@@ -39,16 +39,20 @@ export default function TechniciansPage() {
 
   const supabase = createClient()
 
-  useEffect(() => {
-    fetchTechnicians()
-  }, [])
-
   async function fetchTechnicians() {
-    setLoading(true)
     const { data } = await supabase.from("technicians").select("*").order("created_at", { ascending: false })
     if (data) setTechnicians(data)
     setLoading(false)
   }
+
+  useEffect(() => {
+    const load = async () => {
+      const { data } = await supabase.from("technicians").select("*").order("created_at", { ascending: false })
+      if (data) setTechnicians(data)
+      setLoading(false)
+    }
+    void load()
+  }, [])
 
   function openForm(tech?: Technician) {
     if (tech) {

@@ -38,16 +38,20 @@ export default function FAQsPage() {
 
   const supabase = createClient()
 
-  useEffect(() => {
-    fetchFAQs()
-  }, [])
-
   async function fetchFAQs() {
-    setLoading(true)
     const { data } = await supabase.from("faqs").select("*").order("display_order")
     if (data) setFaqs(data)
     setLoading(false)
   }
+
+  useEffect(() => {
+    const load = async () => {
+      const { data } = await supabase.from("faqs").select("*").order("display_order")
+      if (data) setFaqs(data)
+      setLoading(false)
+    }
+    void load()
+  }, [])
 
   function openForm(faq?: FAQ) {
     if (faq) {

@@ -54,36 +54,34 @@ export default function EditProjectPage() {
   ]
 
   useEffect(() => {
-    if (!isNew) fetchProject()
-  }, [id])
-
-  async function fetchProject() {
-    setLoading(true)
-    const { data, error } = await supabase.from("projects").select("*, project_images(*)").eq("id", id).single()
-    if (error || !data) {
-      toast.error("Project not found")
-      router.push("/admin/projects")
-      return
+    const load = async () => {
+      const { data, error } = await supabase.from("projects").select("*, project_images(*)").eq("id", id).single()
+      if (error || !data) {
+        toast.error("Project not found")
+        router.push("/admin/projects")
+        return
+      }
+      setTitle(data.title)
+      setSlug(data.slug)
+      setDescription(data.description)
+      setLocation(data.location || "")
+      setServiceType(data.service_type || "")
+      setClientName(data.client_name || "")
+      setClientId(data.customer_id || "")
+      setIsPublished(data.is_published)
+      setIsFeatured(data.is_featured)
+      setMetaTitle(data.meta_title || "")
+      setMetaDescription(data.meta_description || "")
+      setImages(
+        (data.project_images || []).map((img: ProjectImage) => ({
+          ...img,
+          tempId: img.id,
+        }))
+      )
+      setLoading(false)
     }
-    setTitle(data.title)
-    setSlug(data.slug)
-    setDescription(data.description)
-    setLocation(data.location || "")
-    setServiceType(data.service_type || "")
-    setClientName(data.client_name || "")
-    setClientId(data.customer_id || "")
-    setIsPublished(data.is_published)
-    setIsFeatured(data.is_featured)
-    setMetaTitle(data.meta_title || "")
-    setMetaDescription(data.meta_description || "")
-    setImages(
-      (data.project_images || []).map((img: ProjectImage) => ({
-        ...img,
-        tempId: img.id,
-      }))
-    )
-    setLoading(false)
-  }
+    if (!isNew) void load()
+  }, [id])
 
   function handleTitleChange(value: string) {
     setTitle(value)

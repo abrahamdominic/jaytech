@@ -21,15 +21,13 @@ export default function ReviewsPage() {
   const supabase = createClient()
 
   useEffect(() => {
-    fetchReviews()
+    const load = async () => {
+      const { data } = await supabase.from("reviews").select("*").order("created_at", { ascending: false })
+      if (data) setReviews(data)
+      setLoading(false)
+    }
+    void load()
   }, [])
-
-  async function fetchReviews() {
-    setLoading(true)
-    const { data } = await supabase.from("reviews").select("*").order("created_at", { ascending: false })
-    if (data) setReviews(data)
-    setLoading(false)
-  }
 
   async function toggleApproved(id: string, current: boolean) {
     setUpdatingId(id)

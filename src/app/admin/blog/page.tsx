@@ -23,19 +23,17 @@ export default function BlogPage() {
   const supabase = createClient()
 
   useEffect(() => {
-    fetchData()
+    const load = async () => {
+      const [postsRes, catsRes] = await Promise.all([
+        supabase.from("blog_posts").select("*, category:blog_categories(*)").order("created_at", { ascending: false }),
+        supabase.from("blog_categories").select("*").order("name"),
+      ])
+      if (postsRes.data) setPosts(postsRes.data)
+      if (catsRes.data) setCategories(catsRes.data)
+      setLoading(false)
+    }
+    void load()
   }, [])
-
-  async function fetchData() {
-    setLoading(true)
-    const [postsRes, catsRes] = await Promise.all([
-      supabase.from("blog_posts").select("*, category:blog_categories(*)").order("created_at", { ascending: false }),
-      supabase.from("blog_categories").select("*").order("name"),
-    ])
-    if (postsRes.data) setPosts(postsRes.data)
-    if (catsRes.data) setCategories(catsRes.data)
-    setLoading(false)
-  }
 
   async function toggleStatus(id: string, current: string) {
     const next = current === "published" ? "draft" : "published"

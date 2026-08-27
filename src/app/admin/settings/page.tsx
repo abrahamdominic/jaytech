@@ -59,48 +59,46 @@ export default function SettingsPage() {
   const supabase = createClient()
 
   useEffect(() => {
-    fetchSettings()
-  }, [])
-
-  async function fetchSettings() {
-    setLoading(true)
-    const { data } = await supabase.from("settings").select("*").eq("key", "site_settings").single()
-    if (data && data.value) {
-      setSettingsId(data.id)
-      const v = data.value as Record<string, unknown>
-      setBusinessName((v.business_name as string) || "")
-      setBusinessDescription((v.business_description as string) || "")
-      setLogoUrl((v.logo_url as string) || "")
-      setFaviconUrl((v.favicon_url as string) || "")
-      setPhone((v.phone as string) || "")
-      setWhatsapp((v.whatsapp as string) || "")
-      setEmail((v.email as string) || "")
-      setAddress((v.address as string) || "")
-      setState((v.state as string) || "")
-      setCity((v.city as string) || "")
-      setWorkingHours((v.working_hours as string) || "")
-      const sl = v.social_links as Record<string, string> | undefined
-      if (sl) {
-        setFacebook(sl.facebook || "")
-        setTwitter(sl.twitter || "")
-        setInstagram(sl.instagram || "")
-        setLinkedin(sl.linkedin || "")
-        setYoutube(sl.youtube || "")
+    const load = async () => {
+      const { data } = await supabase.from("settings").select("*").eq("key", "site_settings").single()
+      if (data && data.value) {
+        setSettingsId(data.id)
+        const v = data.value as Record<string, unknown>
+        setBusinessName((v.business_name as string) || "")
+        setBusinessDescription((v.business_description as string) || "")
+        setLogoUrl((v.logo_url as string) || "")
+        setFaviconUrl((v.favicon_url as string) || "")
+        setPhone((v.phone as string) || "")
+        setWhatsapp((v.whatsapp as string) || "")
+        setEmail((v.email as string) || "")
+        setAddress((v.address as string) || "")
+        setState((v.state as string) || "")
+        setCity((v.city as string) || "")
+        setWorkingHours((v.working_hours as string) || "")
+        const sl = v.social_links as Record<string, string> | undefined
+        if (sl) {
+          setFacebook(sl.facebook || "")
+          setTwitter(sl.twitter || "")
+          setInstagram(sl.instagram || "")
+          setLinkedin(sl.linkedin || "")
+          setYoutube(sl.youtube || "")
+        }
+        setHeroHeadline((v.hero_headline as string) || "")
+        setHeroSubheadline((v.hero_subheadline as string) || "")
+        setHeroCtaText((v.hero_cta_text as string) || "")
+        setHeroCtaSecondary((v.hero_cta_secondary as string) || "")
+        setFooterDescription((v.footer_description as string) || "")
+        setServiceAreas((v.service_areas as string[]) || [])
+        setMetaTitle((v.meta_title as string) || "")
+        setMetaDescription((v.meta_description as string) || "")
+        setOgImage((v.og_image as string) || "")
+        setPaystackKey((v.paystack_key as string) || "")
+        setCurrency((v.currency as string) || "NGN")
       }
-      setHeroHeadline((v.hero_headline as string) || "")
-      setHeroSubheadline((v.hero_subheadline as string) || "")
-      setHeroCtaText((v.hero_cta_text as string) || "")
-      setHeroCtaSecondary((v.hero_cta_secondary as string) || "")
-      setFooterDescription((v.footer_description as string) || "")
-      setServiceAreas((v.service_areas as string[]) || [])
-      setMetaTitle((v.meta_title as string) || "")
-      setMetaDescription((v.meta_description as string) || "")
-      setOgImage((v.og_image as string) || "")
-      setPaystackKey((v.paystack_key as string) || "")
-      setCurrency((v.currency as string) || "NGN")
+      setLoading(false)
     }
-    setLoading(false)
-  }
+    void load()
+  }, [])
 
   function addServiceArea() {
     if (newServiceArea.trim()) {

@@ -14,8 +14,25 @@ import type { LucideIcon } from "lucide-react"
 interface ServiceCard {
   title: string
   description: string
-  icon: LucideIcon
+  icon?: LucideIcon
   slug: string
+}
+
+const iconMap: Record<string, LucideIcon> = {
+  solar: Sun,
+  starlink: Wifi,
+  electrical: Zap,
+  repair: Wrench,
+  consultation: MessageSquare,
+  gadgets: Smartphone,
+  wifi: Wifi,
+  wrench: Wrench,
+  default: Zap,
+}
+
+function serviceIcon(slug: string): LucideIcon {
+  const key = Object.keys(iconMap).find((k) => slug.toLowerCase().includes(k))
+  return key ? iconMap[key] : iconMap.default
 }
 
 const defaultServices: ServiceCard[] = [
@@ -85,14 +102,16 @@ export default function ServicesSection({ services = defaultServices }: Services
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
+          {services.map((service) => {
+            const Icon = service.icon ?? serviceIcon(service.slug)
+            return (
             <Link
               key={service.title}
               href={`/services/${service.slug}`}
               className="group relative flex flex-col rounded-2xl border border-border bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5 hover:border-primary/30"
             >
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 transition-colors duration-300 group-hover:bg-primary group-hover:text-white">
-                <service.icon className="h-7 w-7 text-primary transition-colors duration-300 group-hover:text-white" />
+                <Icon className="h-7 w-7 text-primary transition-colors duration-300 group-hover:text-white" />
               </div>
               <h3 className="text-xl font-bold text-secondary">
                 {service.title}
@@ -115,7 +134,8 @@ export default function ServicesSection({ services = defaultServices }: Services
                 </span>
               </div>
             </Link>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

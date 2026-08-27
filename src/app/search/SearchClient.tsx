@@ -60,20 +60,11 @@ export default function SearchPage() {
 
   const [query, setQuery] = useState(initialQuery)
   const [results, setResults] = useState<SearchResult | null>(null)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(!!initialQuery)
   const [hasSearched, setHasSearched] = useState(!!initialQuery)
-
-  useEffect(() => {
-    if (initialQuery) {
-      performSearch(initialQuery)
-    }
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const performSearch = async (searchQuery: string) => {
     if (!searchQuery.trim()) return
-
-    setIsLoading(true)
-    setHasSearched(true)
 
     try {
       const response = await fetch(
@@ -89,9 +80,31 @@ export default function SearchPage() {
     }
   }
 
+  useEffect(() => {
+    if (!initialQuery) return
+    const run = async () => {
+      if (!initialQuery.trim()) return
+      try {
+        const response = await fetch(
+          `/api/search?q=${encodeURIComponent(initialQuery.trim())}`
+        )
+        if (!response.ok) throw new Error("Search failed")
+        const data = await response.json()
+        setResults(data.results)
+      } catch {
+        setResults({ services: [], projects: [], blog_posts: [], faqs: [] })
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    void run()
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     router.push(`/search?q=${encodeURIComponent(query.trim())}`)
+    setIsLoading(true)
+    setHasSearched(true)
     performSearch(query)
   }
 

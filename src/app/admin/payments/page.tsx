@@ -28,15 +28,13 @@ export default function PaymentsPage() {
   const supabase = createClient()
 
   useEffect(() => {
-    fetchPayments()
+    const load = async () => {
+      const { data } = await supabase.from("payments").select("*").order("created_at", { ascending: false })
+      if (data) setPayments(data)
+      setLoading(false)
+    }
+    void load()
   }, [])
-
-  async function fetchPayments() {
-    setLoading(true)
-    const { data } = await supabase.from("payments").select("*").order("created_at", { ascending: false })
-    if (data) setPayments(data)
-    setLoading(false)
-  }
 
   function statusVariant(s: string) {
     if (s === "success") return "success"

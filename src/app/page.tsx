@@ -1,6 +1,4 @@
 import type { Metadata } from "next"
-import { Sun, Wifi, Zap, Wrench, MessageSquare, Smartphone } from "lucide-react"
-import type { LucideIcon } from "lucide-react"
 import Header from "@/components/layout/Header"
 import Footer from "@/components/layout/Footer"
 import HeroSection from "@/components/home/HeroSection"
@@ -36,23 +34,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-}
-
-const iconMap: Record<string, LucideIcon> = {
-  solar: Sun,
-  starlink: Wifi,
-  electrical: Zap,
-  repair: Wrench,
-  consultation: MessageSquare,
-  gadgets: Smartphone,
-  wifi: Wifi,
-  wrench: Wrench,
-  default: Zap,
-}
-
-function mapServiceIcon(slug: string): LucideIcon {
-  const key = Object.keys(iconMap).find((k) => slug.toLowerCase().includes(k))
-  return key ? iconMap[key] : iconMap.default
 }
 
 async function getServices(): Promise<Service[]> {
@@ -129,7 +110,6 @@ export default async function HomePage() {
     title: s.title,
     description: s.short_description || s.description,
     slug: s.slug,
-    icon: mapServiceIcon(s.slug),
   }))
 
   const mappedProjects = projects.map((p) => ({

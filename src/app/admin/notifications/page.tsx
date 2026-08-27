@@ -38,31 +38,32 @@ export default function NotificationsPage() {
   const [loading, setLoading] = useState(true)
   const [markingRead, setMarkingRead] = useState<string | null>(null)
   const [markingAll, setMarkingAll] = useState(false)
+  const [now, setNow] = useState(() => Date.now())
 
   const supabase = createClient()
 
   useEffect(() => {
-    fetchNotifications()
-  }, [])
+    const load = async () => {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (!user) {
+        setLoading(false)
+        return
+      }
 
-  async function fetchNotifications() {
-    setLoading(true)
-    const { data: { user } } = await supabase.auth.getUser()
-    if (!user) {
+      const { data } = await supabase
+        .from("notifications")
+        .select("*")
+        .eq("user_id", user.id)
+        .order("created_at", { ascending: false })
+        .limit(50)
+
+      if (data) setNotifications(data)
       setLoading(false)
-      return
     }
-
-    const { data } = await supabase
-      .from("notifications")
-      .select("*")
-      .eq("user_id", user.id)
-      .order("created_at", { ascending: false })
-      .limit(50)
-
-    if (data) setNotifications(data)
-    setLoading(false)
-  }
+    void load()
+    const interval = setInterval(() => setNow(Date.now()), 60000)
+    return () => clearInterval(interval)
+  }, [])
 
   async function markAsRead(id: string) {
     setMarkingRead(id)
@@ -107,7 +108,7 @@ export default function NotificationsPage() {
   const unreadCount = notifications.filter((n) => !n.is_read).length
 
   function timeAgo(dateStr: string) {
-    const diff = Date.now() - new Date(dateStr).getTime()
+    const diff = now - new Date(dateStr).getTime()
     const mins = Math.floor(diff / 60000)
     if (mins < 1) return "Just now"
     if (mins < 60) return `${mins}m ago`

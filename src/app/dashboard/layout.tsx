@@ -37,15 +37,15 @@ export default function DashboardLayout({
   const [configError, setConfigError] = useState(false);
 
   useEffect(() => {
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    if (!supabaseUrl || supabaseUrl.includes("placeholder")) {
-      setConfigError(true);
-      setLoading(false);
-      return;
-    }
+    const check = async () => {
+      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+      if (!supabaseUrl || supabaseUrl.includes("placeholder")) {
+        setConfigError(true);
+        setLoading(false);
+        return;
+      }
 
-    const supabase = createClient();
-    const getUser = async () => {
+      const supabase = createClient();
       try {
         const {
           data: { user },
@@ -66,7 +66,7 @@ export default function DashboardLayout({
         setLoading(false);
       }
     };
-    getUser();
+    void check();
   }, [router]);
 
   const handleLogout = async () => {

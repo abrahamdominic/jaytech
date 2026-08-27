@@ -505,6 +505,77 @@ function StepDescription({
 }
 
 // ─── Step 3: Dynamic Project Details ───────────────────────────────
+function Field({
+  label,
+  name,
+  placeholder,
+  type = "text",
+  options,
+  icon: Icon,
+  data,
+  onChange,
+}: {
+  label: string
+  name: keyof FormData
+  placeholder?: string
+  type?: "text" | "select" | "textarea"
+  options?: string[]
+  icon?: React.ElementType
+  data: FormData
+  onChange: (d: Partial<FormData>) => void
+}) {
+  if (type === "select") {
+    return (
+      <div className="w-full">
+        <label className="mb-1.5 block text-sm font-medium text-secondary">
+          {label}
+        </label>
+        <div className="relative">
+          {Icon && (
+            <Icon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
+          )}
+          <select
+            value={(data[name] as string) || ""}
+            onChange={(e) => onChange({ [name]: e.target.value })}
+            className={cn(
+              "flex h-11 w-full appearance-none rounded-xl border border-border bg-white px-4 py-2 text-sm text-secondary shadow-sm transition-all duration-200",
+              "focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20",
+              Icon && "pl-10"
+            )}
+          >
+            <option value="">Select {label.toLowerCase()}</option>
+            {options?.map((opt) => (
+              <option key={opt} value={opt}>
+                {opt}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
+    )
+  }
+
+  if (type === "textarea") {
+    return (
+      <Textarea
+        label={label}
+        placeholder={placeholder}
+        value={(data[name] as string) || ""}
+        onChange={(e) => onChange({ [name]: e.target.value })}
+      />
+    )
+  }
+
+  return (
+    <Input
+      label={label}
+      placeholder={placeholder}
+      value={(data[name] as string) || ""}
+      onChange={(e) => onChange({ [name]: e.target.value })}
+    />
+  )
+}
+
 function StepProjectDetails({
   serviceType,
   data,
@@ -514,67 +585,6 @@ function StepProjectDetails({
   data: FormData
   onChange: (d: Partial<FormData>) => void
 }) {
-  const Field = ({
-    label,
-    name,
-    placeholder,
-    type = "text",
-    options,
-    icon: Icon,
-  }: {
-    label: string
-    name: keyof FormData
-    placeholder?: string
-    type?: "text" | "select" | "textarea"
-    options?: string[]
-    icon?: React.ElementType
-  }) => (
-    <div>
-      {type === "select" ? (
-        <div className="w-full">
-          <label className="mb-1.5 block text-sm font-medium text-secondary">
-            {label}
-          </label>
-          <div className="relative">
-            {Icon && (
-              <Icon className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" />
-            )}
-            <select
-              value={(data[name] as string) || ""}
-              onChange={(e) => onChange({ [name]: e.target.value })}
-              className={cn(
-                "flex h-11 w-full appearance-none rounded-xl border border-border bg-white px-4 py-2 text-sm text-secondary shadow-sm transition-all duration-200",
-                "focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20",
-                Icon && "pl-10"
-              )}
-            >
-              <option value="">Select {label.toLowerCase()}</option>
-              {options?.map((opt) => (
-                <option key={opt} value={opt}>
-                  {opt}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-      ) : type === "textarea" ? (
-        <Textarea
-          label={label}
-          placeholder={placeholder}
-          value={(data[name] as string) || ""}
-          onChange={(e) => onChange({ [name]: e.target.value })}
-        />
-      ) : (
-        <Input
-          label={label}
-          placeholder={placeholder}
-          value={(data[name] as string) || ""}
-          onChange={(e) => onChange({ [name]: e.target.value })}
-        />
-      )}
-    </div>
-  )
-
   if (serviceType === "solar") {
     return (
       <div>
@@ -586,6 +596,7 @@ function StepProjectDetails({
         </p>
         <div className="grid gap-4 sm:grid-cols-2">
           <Field
+        data={data} onChange={onChange}
             label="House Type"
             name="house_type"
             type="select"
@@ -593,6 +604,7 @@ function StepProjectDetails({
             icon={Home}
           />
           <Field
+        data={data} onChange={onChange}
             label="Number of Rooms"
             name="rooms"
             type="select"
@@ -600,36 +612,42 @@ function StepProjectDetails({
           />
           <div className="sm:col-span-2">
             <Field
+        data={data} onChange={onChange}
               label="Appliances to Power"
               name="appliances"
               placeholder="e.g., 2 ACs, refrigerator, TV, washing machine, lights, fan..."
             />
           </div>
           <Field
+        data={data} onChange={onChange}
             label="Current Power Source"
             name="current_power"
             type="select"
             options={["NEPA/PHCN only", "Generator only", "Inverter (old)", "Solar (existing)", "NEPA + Generator", "No power"]}
           />
           <Field
+        data={data} onChange={onChange}
             label="Existing Inverter?"
             name="existing_inverter"
             type="select"
             options={["No", "Yes - working", "Yes - not working", "Not sure"]}
           />
           <Field
+        data={data} onChange={onChange}
             label="Existing Solar Panels?"
             name="existing_panels"
             type="select"
             options={["No", "Yes - 1-2 panels", "Yes - 3-4 panels", "Yes - 5+ panels"]}
           />
           <Field
+        data={data} onChange={onChange}
             label="Desired Backup Duration"
             name="backup_duration"
             type="select"
             options={["4-6 hours", "8-12 hours", "12-18 hours", "24 hours (full day)", "24+ hours"]}
           />
           <Field
+        data={data} onChange={onChange}
             label="Budget Range"
             name="budget"
             type="select"
@@ -637,6 +655,7 @@ function StepProjectDetails({
           />
           <div className="sm:col-span-2">
             <Field
+        data={data} onChange={onChange}
               label="Installation Location"
               name="location"
               placeholder="e.g., Ikeja, Lagos"
@@ -658,23 +677,27 @@ function StepProjectDetails({
         </p>
         <div className="grid gap-4 sm:grid-cols-2">
           <Field
+        data={data} onChange={onChange}
             label="New or Existing Setup?"
             name="is_new"
             type="select"
             options={["New installation", "Existing - needs relocation", "Existing - needs repair", "Existing - upgrade equipment"]}
           />
           <Field
+        data={data} onChange={onChange}
             label="Installation Location"
             name="location"
             placeholder="e.g., Lekki, Lagos"
           />
           <Field
+        data={data} onChange={onChange}
             label="Mount Type"
             name="mount_type"
             type="select"
             options={["Roof mount", "Ground mount", "Wall mount", "Pole mount", "Not sure yet"]}
           />
           <Field
+        data={data} onChange={onChange}
             label="Equipment Status"
             name="equipment"
             type="select"
@@ -682,6 +705,7 @@ function StepProjectDetails({
           />
           <div className="sm:col-span-2">
             <Field
+        data={data} onChange={onChange}
               label="Current Problem / Issue"
               name="problem"
               type="textarea"
@@ -690,6 +714,7 @@ function StepProjectDetails({
           </div>
           <div className="sm:col-span-2">
             <Field
+        data={data} onChange={onChange}
               label="Preferred Installation Point"
               name="preferred_location"
               placeholder="e.g., Back of house, compound pole, balcony..."
@@ -711,6 +736,7 @@ function StepProjectDetails({
         </p>
         <div className="grid gap-4 sm:grid-cols-2">
           <Field
+        data={data} onChange={onChange}
             label="Building Type"
             name="building_type"
             type="select"
@@ -718,24 +744,28 @@ function StepProjectDetails({
             icon={Building}
           />
           <Field
+        data={data} onChange={onChange}
             label="Issue Type"
             name="issue_type"
             type="select"
             options={["New wiring", "Repair/fix fault", "Panel upgrade", "Safety inspection", "Rewiring", "Lighting installation", "Power socket installation", "Earthing/grounding", "Other"]}
           />
           <Field
+        data={data} onChange={onChange}
             label="Number of Rooms"
             name="rooms"
             type="select"
             options={["1-2", "3-4", "5-6", "7-8", "9-10", "10+"]}
           />
           <Field
+        data={data} onChange={onChange}
             label="Existing Wiring?"
             name="existing_wiring"
             type="select"
             options={["New building (no wiring)", "Old wiring (needs replacement)", "Recent wiring (needs repair)", "Not sure"]}
           />
           <Field
+        data={data} onChange={onChange}
             label="Urgency Level"
             name="urgency"
             type="select"
@@ -743,6 +773,7 @@ function StepProjectDetails({
           />
           <div className="sm:col-span-2">
             <Field
+        data={data} onChange={onChange}
               label="Equipment / Materials Needed"
               name="equipment"
               placeholder="e.g., circuit breakers, cables, sockets, switches..."
@@ -762,6 +793,7 @@ function StepProjectDetails({
         Provide more details about your requirements
       </p>
       <Field
+        data={data} onChange={onChange}
         label="Tell us more about your project"
         name="general_info"
         type="textarea"
@@ -1040,6 +1072,17 @@ function StepSchedule({
 }
 
 // ─── Step 7: Review ────────────────────────────────────────────────
+function DetailRow({ label, value }: { label: string; value?: string }) {
+  return value ? (
+    <div className="flex justify-between gap-4 py-2 border-b border-border/50 last:border-0">
+      <span className="text-sm text-muted">{label}</span>
+      <span className="text-sm font-medium text-secondary text-right">
+        {value}
+      </span>
+    </div>
+  ) : null
+}
+
 function StepReview({
   formData,
   files,
@@ -1049,22 +1092,6 @@ function StepReview({
 }) {
   const serviceLabel =
     SERVICES.find((s) => s.type === formData.service_type)?.label || "N/A"
-
-  const DetailRow = ({
-    label,
-    value,
-  }: {
-    label: string
-    value?: string
-  }) =>
-    value ? (
-      <div className="flex justify-between gap-4 py-2 border-b border-border/50 last:border-0">
-        <span className="text-sm text-muted">{label}</span>
-        <span className="text-sm font-medium text-secondary text-right">
-          {value}
-        </span>
-      </div>
-    ) : null
 
   return (
     <div>

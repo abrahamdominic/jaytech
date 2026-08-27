@@ -45,21 +45,19 @@ export default function AnalyticsPage() {
   const supabase = createClient()
 
   useEffect(() => {
-    fetchData()
+    const load = async () => {
+      const [paymentsRes, bookingsRes, servicesRes] = await Promise.all([
+        supabase.from("payments").select("*").order("created_at", { ascending: false }),
+        supabase.from("bookings").select("*").order("created_at", { ascending: false }),
+        supabase.from("services").select("*"),
+      ])
+      if (paymentsRes.data) setPayments(paymentsRes.data)
+      if (bookingsRes.data) setBookings(bookingsRes.data)
+      if (servicesRes.data) setServices(servicesRes.data)
+      setLoading(false)
+    }
+    void load()
   }, [])
-
-  async function fetchData() {
-    setLoading(true)
-    const [paymentsRes, bookingsRes, servicesRes] = await Promise.all([
-      supabase.from("payments").select("*").order("created_at", { ascending: false }),
-      supabase.from("bookings").select("*").order("created_at", { ascending: false }),
-      supabase.from("services").select("*"),
-    ])
-    if (paymentsRes.data) setPayments(paymentsRes.data)
-    if (bookingsRes.data) setBookings(bookingsRes.data)
-    if (servicesRes.data) setServices(servicesRes.data)
-    setLoading(false)
-  }
 
   function getDateCutoff(): Date {
     const now = new Date()

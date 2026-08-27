@@ -1,3 +1,5 @@
+import { createHmac } from "crypto"
+
 const PAYSTACK_BASE_URL = "https://api.paystack.co"
 
 function getSecretKey(): string {
@@ -133,9 +135,7 @@ export function verifyWebhookSignature(
 ): boolean {
   if (!signature) return false
 
-  const crypto = require("crypto") as typeof import("crypto")
-  const hash = crypto
-    .createHmac("sha512", getSecretKey())
+  const hash = createHmac("sha512", getSecretKey())
     .update(body)
     .digest("hex")
 

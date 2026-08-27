@@ -22,15 +22,13 @@ export default function ContactMessagesPage() {
   const supabase = createClient()
 
   useEffect(() => {
-    fetchMessages()
+    const load = async () => {
+      const { data } = await supabase.from("contact_messages").select("*").order("created_at", { ascending: false })
+      if (data) setMessages(data)
+      setLoading(false)
+    }
+    void load()
   }, [])
-
-  async function fetchMessages() {
-    setLoading(true)
-    const { data } = await supabase.from("contact_messages").select("*").order("created_at", { ascending: false })
-    if (data) setMessages(data)
-    setLoading(false)
-  }
 
   async function markAs(id: string, status: ContactMessage["status"]) {
     setUpdatingId(id)

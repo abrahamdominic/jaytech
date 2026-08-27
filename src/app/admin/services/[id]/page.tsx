@@ -57,45 +57,42 @@ export default function EditServicePage() {
   const supabase = createClient()
 
   useEffect(() => {
-    fetchCategories()
-    if (!isNew) fetchService()
-  }, [id])
+    const load = async () => {
+      const { data: cats } = await supabase.from("service_categories").select("*").order("display_order")
+      if (cats) setCategories(cats)
 
-  async function fetchCategories() {
-    const { data } = await supabase.from("service_categories").select("*").order("display_order")
-    if (data) setCategories(data)
-  }
+      if (isNew) return
 
-  async function fetchService() {
-    setLoading(true)
-    const { data, error } = await supabase.from("services").select("*").eq("id", id).single()
-    if (error || !data) {
-      toast.error("Service not found")
-      router.push("/admin/services")
-      return
+      const { data, error } = await supabase.from("services").select("*").eq("id", id).single()
+      if (error || !data) {
+        toast.error("Service not found")
+        router.push("/admin/services")
+        return
+      }
+      setTitle(data.title)
+      setSlug(data.slug)
+      setCategoryId(data.category_id || "")
+      setDescription(data.description)
+      setShortDescription(data.short_description)
+      setImageUrl(data.image_url)
+      setHeroImageUrl(data.hero_image_url || "")
+      setPricingType(data.pricing_type)
+      setStartingPrice(data.starting_price?.toString() || "")
+      setPriceRangeMin(data.price_range_min?.toString() || "")
+      setPriceRangeMax(data.price_range_max?.toString() || "")
+      setEstimatedDuration(data.estimated_duration || "")
+      setBenefits((data.benefits || []).map((b: string) => ({ id: crypto.randomUUID(), value: b })))
+      setIncludes((data.includes || []).map((i: string) => ({ id: crypto.randomUUID(), value: i })))
+      setEquipment((data.equipment || []).map((e: string) => ({ id: crypto.randomUUID(), value: e })))
+      setProcessSteps((data.process_steps || []).map((p: { step: string; description: string }) => ({ ...p, id: crypto.randomUUID() })))
+      setMetaTitle(data.meta_title || "")
+      setMetaDescription(data.meta_description || "")
+      setIsActive(data.is_active)
+      setDisplayOrder(data.display_order?.toString() || "0")
+      setLoading(false)
     }
-    setTitle(data.title)
-    setSlug(data.slug)
-    setCategoryId(data.category_id || "")
-    setDescription(data.description)
-    setShortDescription(data.short_description)
-    setImageUrl(data.image_url)
-    setHeroImageUrl(data.hero_image_url || "")
-    setPricingType(data.pricing_type)
-    setStartingPrice(data.starting_price?.toString() || "")
-    setPriceRangeMin(data.price_range_min?.toString() || "")
-    setPriceRangeMax(data.price_range_max?.toString() || "")
-    setEstimatedDuration(data.estimated_duration || "")
-    setBenefits((data.benefits || []).map((b: string) => ({ id: crypto.randomUUID(), value: b })))
-    setIncludes((data.includes || []).map((i: string) => ({ id: crypto.randomUUID(), value: i })))
-    setEquipment((data.equipment || []).map((e: string) => ({ id: crypto.randomUUID(), value: e })))
-    setProcessSteps((data.process_steps || []).map((p: { step: string; description: string }) => ({ ...p, id: crypto.randomUUID() })))
-    setMetaTitle(data.meta_title || "")
-    setMetaDescription(data.meta_description || "")
-    setIsActive(data.is_active)
-    setDisplayOrder(data.display_order?.toString() || "0")
-    setLoading(false)
-  }
+    void load()
+  }, [id])
 
   function handleTitleChange(value: string) {
     setTitle(value)

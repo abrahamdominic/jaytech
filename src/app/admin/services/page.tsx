@@ -33,19 +33,17 @@ export default function ServicesPage() {
   const supabase = createClient()
 
   useEffect(() => {
-    fetchData()
+    const load = async () => {
+      const [servicesRes, categoriesRes] = await Promise.all([
+        supabase.from("services").select("*, category:service_categories(*)").order("created_at", { ascending: false }),
+        supabase.from("service_categories").select("*").order("display_order"),
+      ])
+      if (servicesRes.data) setServices(servicesRes.data)
+      if (categoriesRes.data) setCategories(categoriesRes.data)
+      setLoading(false)
+    }
+    void load()
   }, [])
-
-  async function fetchData() {
-    setLoading(true)
-    const [servicesRes, categoriesRes] = await Promise.all([
-      supabase.from("services").select("*, category:service_categories(*)").order("created_at", { ascending: false }),
-      supabase.from("service_categories").select("*").order("display_order"),
-    ])
-    if (servicesRes.data) setServices(servicesRes.data)
-    if (categoriesRes.data) setCategories(categoriesRes.data)
-    setLoading(false)
-  }
 
   async function toggleActive(id: string, current: boolean) {
     setTogglingId(id)

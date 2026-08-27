@@ -20,18 +20,16 @@ export default function ProjectsPage() {
   const supabase = createClient()
 
   useEffect(() => {
-    fetchProjects()
+    const load = async () => {
+      const { data } = await supabase
+        .from("projects")
+        .select("*, project_images:image(*)")
+        .order("created_at", { ascending: false })
+      if (data) setProjects(data)
+      setLoading(false)
+    }
+    void load()
   }, [])
-
-  async function fetchProjects() {
-    setLoading(true)
-    const { data } = await supabase
-      .from("projects")
-      .select("*, project_images:image(*)")
-      .order("created_at", { ascending: false })
-    if (data) setProjects(data)
-    setLoading(false)
-  }
 
   async function togglePublished(id: string, current: boolean) {
     setTogglingId(id)
