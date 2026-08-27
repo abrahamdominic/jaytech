@@ -33,7 +33,7 @@ const steps: Step[] = [
   },
   {
     number: 4,
-    title: "JayTech Handles the Job",
+    title: "J Tech Solar, Starlink & CCTV Hub Handles the Job",
     description: "Our certified technicians arrive on time and deliver quality work.",
     icon: CheckCircle,
   },
@@ -51,7 +51,7 @@ export default function HowItWorksSection() {
             How It Works
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
-            Getting started with JayTech is easy. Just follow these four simple steps.
+            Getting started with J Tech Solar, Starlink & CCTV Hub is easy. Just follow these four simple steps.
           </p>
         </div>
 

@@ -1,29 +1,29 @@
--- JayTech Database Seed Data
+-- J Tech Solar, Starlink & CCTV Hub Database Seed Data
 -- Run this after schema.sql
 
 -- ============================================
 -- SETTINGS
 -- ============================================
 insert into public.settings (id, key, value, category) values
-('a0000000-0000-0000-0000-000000000001', 'business_name', '"JayTech"', 'general'),
+('a0000000-0000-0000-0000-000000000001', 'business_name', '"J Tech Solar, Starlink & CCTV Hub"', 'general'),
 ('a0000000-0000-0000-0000-000000000002', 'business_description', '"Professional solar installation, Starlink setup, electrical solutions and reliable energy services delivered nationwide across Nigeria."', 'general'),
 ('a0000000-0000-0000-0000-000000000003', 'phone', '"+234 800 123 4567"', 'contact'),
 ('a0000000-0000-0000-0000-000000000004', 'whatsapp', '"+234 800 123 4567"', 'contact'),
-('a0000000-0000-0000-0000-000000000005', 'email', '"info@jaytech.ng"', 'contact'),
+('a0000000-0000-0000-0000-000000000005', 'email', '"info@J Tech Solar, Starlink & CCTV Hub.ng"', 'contact'),
 ('a0000000-0000-0000-0000-000000000006', 'address', '"123 Tech Avenue, Victoria Island, Lagos, Nigeria"', 'contact'),
 ('a0000000-0000-0000-0000-000000000007', 'working_hours', '"Mon - Fri: 8:00 AM - 6:00 PM, Sat: 9:00 AM - 4:00 PM"', 'contact'),
 ('a0000000-0000-0000-0000-000000000008', 'state', '"Lagos"', 'location'),
 ('a0000000-0000-0000-0000-000000000009', 'city', '"Lagos"', 'location'),
 ('a0000000-0000-0000-0000-000000000010', 'service_areas', '["Lagos", "Abuja", "Port Harcourt", "Ibadan", "Kano", "Enugu", "Benin City", "Warri"]', 'location'),
-('a0000000-0000-0000-0000-000000000011', 'social_links', '{"facebook": "https://facebook.com/jaytech.ng", "instagram": "https://instagram.com/jaytech.ng", "twitter": "https://twitter.com/jaytech_ng", "linkedin": "https://linkedin.com/company/jaytech", "youtube": "https://youtube.com/@jaytechng"}', 'social'),
+('a0000000-0000-0000-0000-000000000011', 'social_links', '{"facebook": "https://facebook.com/J Tech Solar, Starlink & CCTV Hub.ng", "instagram": "https://instagram.com/J Tech Solar, Starlink & CCTV Hub.ng", "twitter": "https://twitter.com/J Tech Solar, Starlink & CCTV Hub_ng", "linkedin": "https://linkedin.com/company/J Tech Solar, Starlink & CCTV Hub", "youtube": "https://youtube.com/@J Tech Solar, Starlink & CCTV Hubng"}', 'social'),
 ('a0000000-0000-0000-0000-000000000012', 'hero_headline', '"Powering Your World. Connecting You to What Matters."', 'hero'),
 ('a0000000-0000-0000-0000-000000000013', 'hero_subheadline', '"Professional solar installation, Starlink setup, electrical solutions and reliable energy services delivered nationwide across Nigeria."', 'hero'),
 ('a0000000-0000-0000-0000-000000000014', 'hero_images', '["/images/jay1.jpg", "/images/jay2.jpg", "/images/jay3.jpg"]', 'hero'),
 ('a0000000-0000-0000-0000-000000000015', 'stats', '{"projects_completed": 500, "happy_customers": 1200, "years_experience": 8, "states_covered": 15}', 'general'),
-('a0000000-0000-0000-0000-000000000016', 'meta_title', '"JayTech - Solar Installation, Starlink Setup & Electrical Services in Nigeria"', 'seo'),
+('a0000000-0000-0000-0000-000000000016', 'meta_title', '"J Tech Solar, Starlink & CCTV Hub - Solar Installation, Starlink Setup & Electrical Services in Nigeria"', 'seo'),
 ('a0000000-0000-0000-0000-000000000017', 'meta_description', '"Nigeria''s trusted partner for professional solar panel installation, Starlink internet setup, electrical wiring, and complete energy solutions. Serving Lagos, Abuja, Port Harcourt and nationwide."', 'seo'),
 ('a0000000-0000-0000-0000-000000000018', 'logo_url', '"/images/jay.png"', 'general'),
-('a0000000-0000-0000-0000-000000000019', 'footer_text', '"© 2026 JayTech. All rights reserved. Powering Nigeria, one home at a time."', 'general'),
+('a0000000-0000-0000-0000-000000000019', 'footer_text', '"© 2026 J Tech Solar, Starlink & CCTV Hub. All rights reserved. Powering Nigeria, one home at a time."', 'general'),
 ('a0000000-0000-0000-0000-000000000020', 'currency', '"NGN"', 'general');
 
 -- ============================================
@@ -58,7 +58,7 @@ insert into public.services (id, category_id, title, slug, description, short_de
  '1-3 days',
  'starting',
  350000,
- 'Solar Panel Installation in Nigeria | JayTech',
+ 'Solar Panel Installation in Nigeria | J Tech Solar, Starlink & CCTV Hub',
  'Professional solar panel installation services in Nigeria. Custom solar systems for homes and businesses. Starting from ₦350,000. 25-year warranty.',
  1),
 
@@ -78,7 +78,7 @@ insert into public.services (id, category_id, title, slug, description, short_de
  '1 day',
  'starting',
  85000,
- 'Starlink Installation in Nigeria | JayTech',
+ 'Starlink Installation in Nigeria | J Tech Solar, Starlink & CCTV Hub',
  'Professional Starlink satellite internet installation in Nigeria. Get high-speed internet anywhere. Expert technicians available nationwide.',
  2),
 
@@ -87,7 +87,7 @@ insert into public.services (id, category_id, title, slug, description, short_de
  'b0000000-0000-0000-0000-000000000003',
  'Electrical Services',
  'electrical-services',
- 'From complete home wiring to complex commercial electrical installations, JayTech delivers safe, reliable, and code-compliant electrical services across Nigeria. Our licensed electricians handle residential wiring, office electrical fit-outs, industrial electrical systems, transformer installations, earthing and grounding, lighting design, and power distribution. We adhere strictly to Nigerian electrical standards and international best practices to ensure the safety of your property and loved ones. Whether you are building a new home, renovating, or need electrical repairs, our team has the expertise and experience to deliver exceptional results.',
+ 'From complete home wiring to complex commercial electrical installations, J Tech Solar, Starlink & CCTV Hub delivers safe, reliable, and code-compliant electrical services across Nigeria. Our licensed electricians handle residential wiring, office electrical fit-outs, industrial electrical systems, transformer installations, earthing and grounding, lighting design, and power distribution. We adhere strictly to Nigerian electrical standards and international best practices to ensure the safety of your property and loved ones. Whether you are building a new home, renovating, or need electrical repairs, our team has the expertise and experience to deliver exceptional results.',
  'Complete electrical wiring, installation, and maintenance services for residential and commercial properties.',
  '/images/jay6.jpg',
  '/images/jay16.jpg',
@@ -98,7 +98,7 @@ insert into public.services (id, category_id, title, slug, description, short_de
  '1-7 days',
  'request_quote',
  0,
- 'Electrical Services in Nigeria | JayTech',
+ 'Electrical Services in Nigeria | J Tech Solar, Starlink & CCTV Hub',
  'Professional electrical services in Nigeria. Home wiring, commercial installations, safety inspections. Licensed electricians. Get a free quote today.',
  3),
 
@@ -118,7 +118,7 @@ insert into public.services (id, category_id, title, slug, description, short_de
  'Same day - 2 days',
  'request_quote',
  0,
- 'Solar & Electrical Repairs in Nigeria | JayTech',
+ 'Solar & Electrical Repairs in Nigeria | J Tech Solar, Starlink & CCTV Hub',
  'Expert solar, inverter, and electrical repair and maintenance services in Nigeria. Fast diagnosis, quality repairs. Book a service today.',
  4),
 
@@ -138,7 +138,7 @@ insert into public.services (id, category_id, title, slug, description, short_de
  '1-3 days',
  'request_quote',
  0,
- 'Energy Consultation Services in Nigeria | JayTech',
+ 'Energy Consultation Services in Nigeria | J Tech Solar, Starlink & CCTV Hub',
  'Professional energy consultation in Nigeria. Expert advice on solar, electrical, and Starlink solutions. Book your consultation today.',
  5),
 
@@ -158,8 +158,8 @@ insert into public.services (id, category_id, title, slug, description, short_de
  '1-5 days',
  'starting',
  15000,
- 'Electrical Gadgets & Smart Home Devices | JayTech',
- 'Shop quality electrical gadgets, smart home devices, and energy-efficient appliances at JayTech. Genuine products with warranty.',
+ 'Electrical Gadgets & Smart Home Devices | J Tech Solar, Starlink & CCTV Hub',
+ 'Shop quality electrical gadgets, smart home devices, and energy-efficient appliances at J Tech Solar, Starlink & CCTV Hub. Genuine products with warranty.',
  6);
 
 -- ============================================
@@ -178,12 +178,12 @@ insert into public.service_faqs (id, service_id, question, answer, display_order
 
 ('d0000000-0000-0000-0000-000000000003', 'c0000000-0000-0000-0000-000000000001',
  'What warranty do you offer on solar installations?',
- 'We provide a 25-year performance warranty on solar panels (guaranteeing at least 80% efficiency), a 5-year warranty on inverters, and a 5-year installation warranty. Batteries come with their own manufacturer warranty (typically 2-5 years depending on the type). All warranties are documented and backed by JayTech.', 3),
+ 'We provide a 25-year performance warranty on solar panels (guaranteeing at least 80% efficiency), a 5-year warranty on inverters, and a 5-year installation warranty. Batteries come with their own manufacturer warranty (typically 2-5 years depending on the type). All warranties are documented and backed by J Tech Solar, Starlink & CCTV Hub.', 3),
 
 -- Starlink Installation FAQs
 ('d0000000-0000-0000-0000-000000000004', 'c0000000-0000-0000-0000-000000000002',
  'Is Starlink available in Nigeria?',
- 'Yes! Starlink is officially available in Nigeria. SpaceX launched the service and you can order the Starlink kit directly or through authorized resellers. JayTech helps you procure the kit and provides professional installation to ensure you get the best possible speeds and performance from your Starlink system.', 1),
+ 'Yes! Starlink is officially available in Nigeria. SpaceX launched the service and you can order the Starlink kit directly or through authorized resellers. J Tech Solar, Starlink & CCTV Hub helps you procure the kit and provides professional installation to ensure you get the best possible speeds and performance from your Starlink system.', 1),
 
 ('d0000000-0000-0000-0000-000000000005', 'c0000000-0000-0000-0000-000000000002',
  'How fast is Starlink internet in Nigeria?',
@@ -200,11 +200,11 @@ insert into public.service_faqs (id, service_id, question, answer, display_order
 
 ('d0000000-0000-0000-0000-000000000008', 'c0000000-0000-0000-0000-000000000003',
  'Do you provide emergency electrical repair services?',
- 'Yes, we understand that electrical emergencies can happen at any time. JayTech offers emergency electrical repair services with rapid response times across Lagos, Abuja, and other major cities. Call our emergency line and a qualified electrician will be dispatched to your location as quickly as possible to resolve urgent electrical issues safely.', 2),
+ 'Yes, we understand that electrical emergencies can happen at any time. J Tech Solar, Starlink & CCTV Hub offers emergency electrical repair services with rapid response times across Lagos, Abuja, and other major cities. Call our emergency line and a qualified electrician will be dispatched to your location as quickly as possible to resolve urgent electrical issues safely.', 2),
 
 ('d0000000-0000-0000-0000-000000000009', 'c0000000-0000-0000-0000-000000000003',
  'Are your electricians licensed and insured?',
- 'Absolutely. All JayTech electricians are fully licensed by the Nigerian Society of Engineers and carry valid practicing licenses. We are also fully insured with comprehensive liability insurance to protect your property during all electrical work. Our team undergoes regular training to stay updated with the latest electrical standards and safety protocols.', 3),
+ 'Absolutely. All J Tech Solar, Starlink & CCTV Hub electricians are fully licensed by the Nigerian Society of Engineers and carry valid practicing licenses. We are also fully insured with comprehensive liability insurance to protect your property during all electrical work. Our team undergoes regular training to stay updated with the latest electrical standards and safety protocols.', 3),
 
 -- Repairs & Maintenance FAQs
 ('d0000000-0000-0000-0000-000000000010', 'c0000000-0000-0000-0000-000000000004',
@@ -222,7 +222,7 @@ insert into public.service_faqs (id, service_id, question, answer, display_order
 -- Consultation FAQs
 ('d0000000-0000-0000-0000-000000000013', 'c0000000-0000-0000-0000-000000000005',
  'How much does a consultation cost?',
- 'Our initial phone consultation is completely free! For on-site consultations that include a detailed energy audit, site assessment, and custom system design report, we charge a professional fee that is fully credited toward your project cost if you proceed with JayTech. This ensures you get expert advice with no financial risk.', 1),
+ 'Our initial phone consultation is completely free! For on-site consultations that include a detailed energy audit, site assessment, and custom system design report, we charge a professional fee that is fully credited toward your project cost if you proceed with J Tech Solar, Starlink & CCTV Hub. This ensures you get expert advice with no financial risk.', 1),
 
 ('d0000000-0000-0000-0000-000000000014', 'c0000000-0000-0000-0000-000000000005',
  'What does an energy consultation include?',
@@ -239,11 +239,11 @@ insert into public.service_faqs (id, service_id, question, answer, display_order
 
 ('d0000000-0000-0000-0000-000000000017', 'c0000000-0000-0000-0000-000000000006',
  'Do you offer installation for purchased gadgets?',
- 'Yes! When you purchase gadgets from JayTech, we offer professional installation and setup services. This includes CCTV camera installation and configuration, smart home device setup, inverter and charge controller installation, and network equipment configuration. Installation fees vary by product and are quoted separately. Many gadgets come with free basic setup.', 2),
+ 'Yes! When you purchase gadgets from J Tech Solar, Starlink & CCTV Hub, we offer professional installation and setup services. This includes CCTV camera installation and configuration, smart home device setup, inverter and charge controller installation, and network equipment configuration. Installation fees vary by product and are quoted separately. Many gadgets come with free basic setup.', 2),
 
 ('d0000000-0000-0000-0000-000000000018', 'c0000000-0000-0000-0000-000000000006',
  'Do your products come with warranties?',
- 'Yes, all electrical gadgets sold by JayTech come with manufacturer warranties ranging from 6 months to 3 years depending on the product. We provide warranty documentation at the time of purchase. If you experience any issues within the warranty period, we handle the warranty claim process for you and provide replacement or repair services.', 3);
+ 'Yes, all electrical gadgets sold by J Tech Solar, Starlink & CCTV Hub come with manufacturer warranties ranging from 6 months to 3 years depending on the product. We provide warranty documentation at the time of purchase. If you experience any issues within the warranty period, we handle the warranty claim process for you and provide replacement or repair services.', 3);
 
 -- ============================================
 -- PROJECTS (6)
@@ -259,7 +259,7 @@ insert into public.projects (id, title, slug, description, location, service_id,
  'Solar Installation',
  'Chief Adewale Ogundimu',
  true, true,
- 'Lekki Phase 1 Solar Installation | JayTech Portfolio',
+ 'Lekki Phase 1 Solar Installation | J Tech Solar, Starlink & CCTV Hub Portfolio',
  'View our 10kVA hybrid solar installation project in Lekki Phase 1, Lagos. Eliminated generator dependency and saved ₦150,000 monthly.'),
 
 ('e0000000-0000-0000-0000-000000000002',
@@ -271,7 +271,7 @@ insert into public.projects (id, title, slug, description, location, service_id,
  'Starlink Installation',
  'GreenHub Coworking',
  true, false,
- 'Abuja Office Starlink Installation | JayTech Portfolio',
+ 'Abuja Office Starlink Installation | J Tech Solar, Starlink & CCTV Hub Portfolio',
  'Starlink Business installation for a co-working space in Wuse 2, Abuja. 150+ Mbps reliable internet for 50+ workstations.'),
 
 ('e0000000-0000-0000-0000-000000000003',
@@ -283,7 +283,7 @@ insert into public.projects (id, title, slug, description, location, service_id,
  'Electrical Services',
  'Mr. Oluwaseun Bakare',
  true, false,
- 'Ikeja Residential Electrical Rewiring | JayTech Portfolio',
+ 'Ikeja Residential Electrical Rewiring | J Tech Solar, Starlink & CCTV Hub Portfolio',
  'Complete electrical rewiring of a 3-story building in Ikeja, Lagos. Modern copper wiring, new distribution board, and LED lighting.'),
 
 ('e0000000-0000-0000-0000-000000000004',
@@ -295,7 +295,7 @@ insert into public.projects (id, title, slug, description, location, service_id,
  'Solar Installation',
  'Riverview Manufacturing Ltd',
  true, true,
- 'Port Harcourt Factory Solar Installation | JayTech Portfolio',
+ 'Port Harcourt Factory Solar Installation | J Tech Solar, Starlink & CCTV Hub Portfolio',
  '50kVA commercial solar system for a factory in Trans Amadi, PH. Saving over ₦500,000 monthly on electricity costs.'),
 
 ('e0000000-0000-0000-0000-000000000005',
@@ -307,19 +307,19 @@ insert into public.projects (id, title, slug, description, location, service_id,
  'Solar Installation',
  'The Nwachukwu Family',
  true, true,
- 'Village Home Solar Installation | JayTech Portfolio',
+ 'Village Home Solar Installation | J Tech Solar, Starlink & CCTV Hub Portfolio',
  '3kVA solar installation for a rural home in Enugu State. Bringing reliable clean energy to off-grid communities.'),
 
 ('e0000000-0000-0000-0000-000000000006',
  'Starlink for Remote School',
  'starlink-for-remote-school',
- 'Starlink satellite internet installation for a secondary school in a remote area of Kaduna State. The school had no reliable internet access, making it impossible for students to access online educational resources, participate in digital literacy programs, or connect with educational platforms. We installed Starlink with a clear-sky dish mount on the school building, configured a school-wide WiFi network covering classrooms, the computer lab, and the staff room. Teachers now access online teaching materials, students can use educational apps, and the school has joined the digital education revolution. The installation was completed as part of JayTech''s educational CSR initiative.',
+ 'Starlink satellite internet installation for a secondary school in a remote area of Kaduna State. The school had no reliable internet access, making it impossible for students to access online educational resources, participate in digital literacy programs, or connect with educational platforms. We installed Starlink with a clear-sky dish mount on the school building, configured a school-wide WiFi network covering classrooms, the computer lab, and the staff room. Teachers now access online teaching materials, students can use educational apps, and the school has joined the digital education revolution. The installation was completed as part of J Tech Solar, Starlink & CCTV Hub''s educational CSR initiative.',
  'Kaduna, Kaduna State',
  'c0000000-0000-0000-0000-000000000002',
  'Starlink Installation',
  'Government Secondary School, Rigachikun',
  true, true,
- 'Starlink for Remote School in Kaduna | JayTech Portfolio',
+ 'Starlink for Remote School in Kaduna | J Tech Solar, Starlink & CCTV Hub Portfolio',
  'Starlink internet installation for a secondary school in Kaduna. Bringing digital education to underserved communities.');
 
 -- ============================================
@@ -346,42 +346,42 @@ insert into public.reviews (id, customer_id, service_id, name, rating, review, s
 
 ('f0000000-0000-0000-0000-000000000001', null, 'c0000000-0000-0000-0000-000000000001',
  'Adebayo Olatunji', 5,
- 'JayTech transformed our home! We were spending over ₦120,000 monthly on diesel for our generator before installing solar. Now our electricity bill has dropped by 80% and we enjoy 24/7 power. The installation team was professional, clean, and finished in just two days. The system has been running perfectly for 8 months now. Highly recommend JayTech for anyone considering solar in Lagos!',
+ 'J Tech Solar, Starlink & CCTV Hub transformed our home! We were spending over ₦120,000 monthly on diesel for our generator before installing solar. Now our electricity bill has dropped by 80% and we enjoy 24/7 power. The installation team was professional, clean, and finished in just two days. The system has been running perfectly for 8 months now. Highly recommend J Tech Solar, Starlink & CCTV Hub for anyone considering solar in Lagos!',
  'Solar Installation', true, true),
 
 ('f0000000-0000-0000-0000-000000000002', null, 'c0000000-0000-0000-0000-000000000002',
  'Chioma Eze', 5,
- 'After struggling with unreliable internet from our local ISP, we decided to try Starlink. JayTech handled the entire process from helping us order the kit to professional installation. We are now getting 150+ Mbps consistently! Video calls are smooth, streaming is perfect, and my kids can finally do their online classes without constant disconnections. Best investment we have made this year.',
+ 'After struggling with unreliable internet from our local ISP, we decided to try Starlink. J Tech Solar, Starlink & CCTV Hub handled the entire process from helping us order the kit to professional installation. We are now getting 150+ Mbps consistently! Video calls are smooth, streaming is perfect, and my kids can finally do their online classes without constant disconnections. Best investment we have made this year.',
  'Starlink Installation', true, true),
 
 ('f0000000-0000-0000-0000-000000000003', null, 'c0000000-0000-0000-0000-000000000003',
  'Ibrahim Musa Danja', 4,
- 'JayTech rewired our entire 4-bedroom house in Abuja. The old wiring was a disaster waiting to happen - we had experienced two electrical fires in neighboring houses. The team was thorough and professional. They installed a modern distribution board, replaced all the old aluminum wiring with proper copper cables, and even added extra sockets where we needed them. The only reason for 4 stars instead of 5 is that the project took a day longer than estimated, but the quality of work is excellent.',
+ 'J Tech Solar, Starlink & CCTV Hub rewired our entire 4-bedroom house in Abuja. The old wiring was a disaster waiting to happen - we had experienced two electrical fires in neighboring houses. The team was thorough and professional. They installed a modern distribution board, replaced all the old aluminum wiring with proper copper cables, and even added extra sockets where we needed them. The only reason for 4 stars instead of 5 is that the project took a day longer than estimated, but the quality of work is excellent.',
  'Electrical Services', true, false),
 
 ('f0000000-0000-0000-0000-000000000004', null, 'c0000000-0000-0000-0000-000000000001',
  'Folake Adeyemi', 5,
- 'We installed a 5kVA system for our pharmacy in Ikeja. JayTech was recommended by a friend and they did not disappoint. From the initial consultation to the final installation, everything was handled professionally. They even helped us choose the right battery size to ensure our refrigerators (for medicines) never lose power. 8 months later and we have not experienced a single power interruption. Thank you JayTech!',
+ 'We installed a 5kVA system for our pharmacy in Ikeja. J Tech Solar, Starlink & CCTV Hub was recommended by a friend and they did not disappoint. From the initial consultation to the final installation, everything was handled professionally. They even helped us choose the right battery size to ensure our refrigerators (for medicines) never lose power. 8 months later and we have not experienced a single power interruption. Thank you J Tech Solar, Starlink & CCTV Hub!',
  'Solar Installation', true, true),
 
 ('f0000000-0000-0000-0000-000000000005', null, 'c0000000-0000-0000-0000-000000000004',
  'Emeka Okonkwo', 5,
- 'My inverter stopped working and I thought I would need to buy a new one. JayTech diagnosed the issue within hours - it was a faulty charge controller board. They ordered the part and fixed it within 2 days. The technician was knowledgeable and explained everything clearly. Their repair cost was very reasonable compared to buying a new inverter. These guys know their stuff!',
+ 'My inverter stopped working and I thought I would need to buy a new one. J Tech Solar, Starlink & CCTV Hub diagnosed the issue within hours - it was a faulty charge controller board. They ordered the part and fixed it within 2 days. The technician was knowledgeable and explained everything clearly. Their repair cost was very reasonable compared to buying a new inverter. These guys know their stuff!',
  'Repairs & Maintenance', true, false),
 
 ('f0000000-0000-0000-0000-000000000006', null, 'c0000000-0000-0000-0000-000000000005',
  'Blessing Ogba', 4,
- 'I needed expert advice on whether to go solar or stick with my generator for my new house in Port Harcourt. JayTech''s consultation service was incredibly helpful. They assessed my energy needs, showed me the numbers, and recommended a hybrid system that lets me use solar during the day and grid power at night. The detailed report they provided helped me make an informed decision. Great service!',
+ 'I needed expert advice on whether to go solar or stick with my generator for my new house in Port Harcourt. J Tech Solar, Starlink & CCTV Hub''s consultation service was incredibly helpful. They assessed my energy needs, showed me the numbers, and recommended a hybrid system that lets me use solar during the day and grid power at night. The detailed report they provided helped me make an informed decision. Great service!',
  'Energy Consultation', true, false),
 
 ('f0000000-0000-0000-0000-000000000007', null, 'c0000000-0000-0000-0000-000000000006',
  'Yusuf Abdullahi', 5,
- 'Bought a smart inverter and CCTV cameras from JayTech. The prices were very competitive and they provided free installation for the CCTV system. The cameras work perfectly with the mobile app and I can monitor my shop from anywhere. Their after-sales support is also top-notch - they called to check if everything was working fine. Will definitely buy from them again.',
+ 'Bought a smart inverter and CCTV cameras from J Tech Solar, Starlink & CCTV Hub. The prices were very competitive and they provided free installation for the CCTV system. The cameras work perfectly with the mobile app and I can monitor my shop from anywhere. Their after-sales support is also top-notch - they called to check if everything was working fine. Will definitely buy from them again.',
  'Electrical Gadgets', true, false),
 
 ('f0000000-0000-0000-0000-000000000008', null, 'c0000000-0000-0000-0000-000000000001',
  'Ngozi Nwosu', 5,
- 'JayTech installed a 3kVA solar system for my parents'' village home in Enugu. It was their community outreach program and they offered us a very affordable rate. My parents can now charge their phones, watch TV, and have light at night for the first time ever. I am emotional just writing this review. JayTech is doing amazing work bringing clean energy to rural communities. God bless the team!',
+ 'J Tech Solar, Starlink & CCTV Hub installed a 3kVA solar system for my parents'' village home in Enugu. It was their community outreach program and they offered us a very affordable rate. My parents can now charge their phones, watch TV, and have light at night for the first time ever. I am emotional just writing this review. J Tech Solar, Starlink & CCTV Hub is doing amazing work bringing clean energy to rural communities. God bless the team!',
  'Solar Installation', true, true);
 
 -- ============================================
@@ -395,17 +395,17 @@ insert into public.faqs (id, question, answer, category, display_order) values
 
 ('aa000000-0000-0000-0000-000000000002',
  'Is Starlink available in all parts of Nigeria?',
- 'Yes, Starlink satellite internet is available throughout Nigeria since its official launch. Unlike traditional ISPs that require physical infrastructure, Starlink connects via satellite, making it available even in remote and rural areas. JayTech provides professional Starlink installation services nationwide, including areas in Lagos, Abuja, Port Harcourt, Kano, Enugu, and beyond.',
+ 'Yes, Starlink satellite internet is available throughout Nigeria since its official launch. Unlike traditional ISPs that require physical infrastructure, Starlink connects via satellite, making it available even in remote and rural areas. J Tech Solar, Starlink & CCTV Hub provides professional Starlink installation services nationwide, including areas in Lagos, Abuja, Port Harcourt, Kano, Enugu, and beyond.',
  'starlink', 2),
 
 ('aa000000-0000-0000-0000-000000000003',
- 'Which states and cities does JayTech service?',
- 'JayTech provides services across Nigeria. We have strong presence in Lagos, Abuja, Port Harcourt, Ibadan, Kano, Enugu, Benin City, and Warri. Our technicians travel to other locations nationwide for projects. Contact us to confirm availability in your specific area. For Starlink and solar consultations, we can assist remotely regardless of your location.',
+ 'Which states and cities does J Tech Solar, Starlink & CCTV Hub service?',
+ 'J Tech Solar, Starlink & CCTV Hub provides services across Nigeria. We have strong presence in Lagos, Abuja, Port Harcourt, Ibadan, Kano, Enugu, Benin City, and Warri. Our technicians travel to other locations nationwide for projects. Contact us to confirm availability in your specific area. For Starlink and solar consultations, we can assist remotely regardless of your location.',
  'general', 3),
 
 ('aa000000-0000-0000-0000-000000000004',
  'What warranty do you offer on your installations?',
- 'We provide comprehensive warranties on all our installations. Solar panels come with a 25-year performance warranty (maintaining at least 80% efficiency). Inverters have a 5-year manufacturer warranty. Our installation workmanship is covered by a 5-year warranty. Batteries come with 2-5 year warranties depending on the type (tubular or lithium). All warranties are documented and honored by JayTech.',
+ 'We provide comprehensive warranties on all our installations. Solar panels come with a 25-year performance warranty (maintaining at least 80% efficiency). Inverters have a 5-year manufacturer warranty. Our installation workmanship is covered by a 5-year warranty. Batteries come with 2-5 year warranties depending on the type (tubular or lithium). All warranties are documented and honored by J Tech Solar, Starlink & CCTV Hub.',
  'general', 4),
 
 ('aa000000-0000-0000-0000-000000000005',
@@ -414,8 +414,8 @@ insert into public.faqs (id, question, answer, category, display_order) values
  'general', 5),
 
 ('aa000000-0000-0000-0000-000000000006',
- 'How do I book a service with JayTech?',
- 'Booking a service with JayTech is easy! You can: 1) Fill out the booking form on our website, 2) Call or WhatsApp us at +234 800 123 4567, 3) Send an email to info@jaytech.ng, or 4) Visit our office at 123 Tech Avenue, Victoria Island, Lagos. We will schedule a consultation, provide a detailed quotation, and agree on a timeline before beginning any work.',
+ 'How do I book a service with J Tech Solar, Starlink & CCTV Hub?',
+ 'Booking a service with J Tech Solar, Starlink & CCTV Hub is easy! You can: 1) Fill out the booking form on our website, 2) Call or WhatsApp us at +234 800 123 4567, 3) Send an email to info@J Tech Solar, Starlink & CCTV Hub.ng, or 4) Visit our office at 123 Tech Avenue, Victoria Island, Lagos. We will schedule a consultation, provide a detailed quotation, and agree on a timeline before beginning any work.',
  'general', 6),
 
 ('aa000000-0000-0000-0000-000000000007',
@@ -425,12 +425,12 @@ insert into public.faqs (id, question, answer, category, display_order) values
 
 ('aa000000-0000-0000-0000-000000000008',
  'Do you offer emergency services?',
- 'Yes, JayTech offers emergency electrical and solar repair services. If you have an urgent electrical issue, a malfunctioning inverter, or a solar system breakdown, call our emergency line at +234 800 123 4567. We prioritize emergency calls and aim to have a technician dispatched to your location within hours in Lagos, Abuja, and other major cities we serve.',
+ 'Yes, J Tech Solar, Starlink & CCTV Hub offers emergency electrical and solar repair services. If you have an urgent electrical issue, a malfunctioning inverter, or a solar system breakdown, call our emergency line at +234 800 123 4567. We prioritize emergency calls and aim to have a technician dispatched to your location within hours in Lagos, Abuja, and other major cities we serve.',
  'general', 8),
 
 ('aa000000-0000-0000-0000-000000000009',
  'How often should I service my solar or electrical system?',
- 'We recommend professional maintenance for solar systems at least twice a year. This includes panel cleaning, inverter inspection, battery health check, and wiring inspection. For electrical installations, we recommend a safety inspection every 2-3 years, or immediately if you notice any issues like flickering lights, burning smells, or frequent tripping. JayTech offers affordable maintenance packages to keep your systems running optimally.',
+ 'We recommend professional maintenance for solar systems at least twice a year. This includes panel cleaning, inverter inspection, battery health check, and wiring inspection. For electrical installations, we recommend a safety inspection every 2-3 years, or immediately if you notice any issues like flickering lights, burning smells, or frequent tripping. J Tech Solar, Starlink & CCTV Hub offers affordable maintenance packages to keep your systems running optimally.',
  'general', 9),
 
 ('aa000000-0000-0000-0000-000000000010',
@@ -474,7 +474,7 @@ insert into public.blog_posts (id, title, slug, content, excerpt, featured_image
  '/images/jay17.jpg',
  'bb000000-0000-0000-0000-000000000001',
  '["solar", "installation", "nigeria", "energy", "renewable", "guide"]',
- 'Complete Guide to Solar Installation in Nigeria | JayTech Blog',
+ 'Complete Guide to Solar Installation in Nigeria | J Tech Solar, Starlink & CCTV Hub Blog',
  'Everything you need to know about solar panel installation in Nigeria. System sizing, costs, components, and the installation process explained.',
  'solar installation nigeria, solar panel cost nigeria, how to install solar in nigeria, solar energy guide',
  'published',
@@ -487,21 +487,21 @@ insert into public.blog_posts (id, title, slug, content, excerpt, featured_image
 <p>Starlink is a satellite internet constellation developed by SpaceX, the American aerospace company founded by Elon Musk. Unlike traditional internet service providers that rely on physical infrastructure like fiber optic cables and cell towers, Starlink beams internet directly from thousands of satellites orbiting the Earth. This revolutionary approach means high-speed internet is available virtually anywhere with a clear view of the sky, including remote and rural areas of Nigeria where traditional ISPs have never reached.</p>
 
 <h2>Starlink Availability in Nigeria</h2>
-<p>Starlink officially launched in Nigeria in January 2023, making Nigeria one of the first African countries to receive the service. The Starlink Standard kit is available for purchase through the Starlink website or authorized resellers like JayTech. The service covers the entire country, with particularly strong performance in areas with clear sky visibility. Unlike GSM networks that experience congestion during peak hours, Starlink maintains consistent speeds throughout the day.</p>
+<p>Starlink officially launched in Nigeria in January 2023, making Nigeria one of the first African countries to receive the service. The Starlink Standard kit is available for purchase through the Starlink website or authorized resellers like J Tech Solar, Starlink & CCTV Hub. The service covers the entire country, with particularly strong performance in areas with clear sky visibility. Unlike GSM networks that experience congestion during peak hours, Starlink maintains consistent speeds throughout the day.</p>
 
 <h2>Starlink Speeds and Performance in Nigeria</h2>
 <p>Users in Nigeria typically experience download speeds between 50-200 Mbps, with upload speeds of 10-30 Mbps. Latency ranges from 20-50ms, which is excellent for video conferencing, online gaming, and real-time applications. During the rainy season, some temporary signal disruption may occur during heavy downpours, but the system generally recovers quickly. Starlink''s performance in Nigeria has been consistently improving as SpaceX continues to launch more satellites and optimize coverage over the African continent.</p>
 
 <h2>How Much Does Starlink Cost in Nigeria?</h2>
-<p>The Starlink Standard kit costs between ₦350,000-₦450,000 (prices may vary). The monthly subscription fee is approximately ₦38,000 (or the equivalent in USD at current exchange rates). While this may seem expensive compared to some local ISPs, the speed, reliability, and unlimited data make it excellent value, especially for businesses and users in areas with poor traditional internet infrastructure. Professional installation by JayTech starts from ₦85,000 and ensures you get the best possible performance from your system.</p>
+<p>The Starlink Standard kit costs between ₦350,000-₦450,000 (prices may vary). The monthly subscription fee is approximately ₦38,000 (or the equivalent in USD at current exchange rates). While this may seem expensive compared to some local ISPs, the speed, reliability, and unlimited data make it excellent value, especially for businesses and users in areas with poor traditional internet infrastructure. Professional installation by J Tech Solar, Starlink & CCTV Hub starts from ₦85,000 and ensures you get the best possible performance from your system.</p>
 
 <h2>Is Starlink Worth It in Nigeria?</h2>
-<p>For many Nigerians, Starlink is absolutely worth the investment. If you work remotely, run an online business, need reliable video conferencing, or live in an area with poor internet coverage, Starlink can be a game-changer. The unlimited data, consistent speeds, and low latency make it superior to most alternatives. Businesses especially benefit from the reliable connection for cloud operations, POS systems, and customer-facing services. Contact JayTech today to discuss whether Starlink is the right choice for your needs.</p>',
+<p>For many Nigerians, Starlink is absolutely worth the investment. If you work remotely, run an online business, need reliable video conferencing, or live in an area with poor internet coverage, Starlink can be a game-changer. The unlimited data, consistent speeds, and low latency make it superior to most alternatives. Businesses especially benefit from the reliable connection for cloud operations, POS systems, and customer-facing services. Contact J Tech Solar, Starlink & CCTV Hub today to discuss whether Starlink is the right choice for your needs.</p>',
  'Everything you need to know about Starlink satellite internet in Nigeria. Availability, pricing, speeds, installation, and whether its worth it.',
  '/images/jay18.jpg',
  'bb000000-0000-0000-0000-000000000002',
  '["starlink", "internet", "nigeria", "satellite", "broadband", "spacex"]',
- 'Starlink Internet in Nigeria: Everything You Need to Know | JayTech Blog',
+ 'Starlink Internet in Nigeria: Everything You Need to Know | J Tech Solar, Starlink & CCTV Hub Blog',
  'Complete guide to Starlink in Nigeria. Learn about availability, pricing, speeds, and installation. Is Starlink worth it in Nigeria?',
  'starlink nigeria, starlink price nigeria, starlink installation nigeria, starlink speed nigeria, satellite internet nigeria',
  'published',
@@ -511,13 +511,13 @@ insert into public.blog_posts (id, title, slug, content, excerpt, featured_image
  'Top 5 Electrical Safety Tips for Nigerian Homes',
  'top-5-electrical-safety-tips-for-nigerian-homes',
  '<h2>Why Electrical Safety Matters</h2>
-<p>Electrical accidents are one of the leading causes of house fires in Nigeria. Faulty wiring, overloaded circuits, and improper electrical installations claim lives and destroy properties every year. Many of these tragedies are preventable with proper knowledge and regular maintenance. As a leading electrical services company, JayTech is committed to educating Nigerian homeowners on electrical safety to protect their families and properties.</p>
+<p>Electrical accidents are one of the leading causes of house fires in Nigeria. Faulty wiring, overloaded circuits, and improper electrical installations claim lives and destroy properties every year. Many of these tragedies are preventable with proper knowledge and regular maintenance. As a leading electrical services company, J Tech Solar, Starlink & CCTV Hub is committed to educating Nigerian homeowners on electrical safety to protect their families and properties.</p>
 
 <h2>1. Avoid Overloading Power Sockets and Extension Boards</h2>
 <p>One of the most common causes of electrical fires in Nigerian homes is overloading power sockets. Using multiple adapters plugged into a single socket to power high-wattage appliances like electric irons, microwaves, and heaters can cause overheating and fire. Each power socket should only handle appliances within its rated capacity. Distribute your appliances across multiple sockets on different circuits, and never daisy-chain extension boards together.</p>
 
 <h2>2. Regularly Inspect Your Electrical Wiring</h2>
-<p>Old and deteriorating wiring is a silent killer. If your home is over 15 years old and has never had its wiring inspected, you could be at risk. Warning signs include flickering lights, burning smells from outlets, warm or discolored switch plates, frequently tripping breakers, and sparking when plugging in appliances. Schedule a professional electrical inspection with JayTech every 2-3 years to identify and fix potential hazards before they cause fires or electrocution.</p>
+<p>Old and deteriorating wiring is a silent killer. If your home is over 15 years old and has never had its wiring inspected, you could be at risk. Warning signs include flickering lights, burning smells from outlets, warm or discolored switch plates, frequently tripping breakers, and sparking when plugging in appliances. Schedule a professional electrical inspection with J Tech Solar, Starlink & CCTV Hub every 2-3 years to identify and fix potential hazards before they cause fires or electrocution.</p>
 
 <h2>3. Install Circuit Breakers and RCDs</h2>
 <p>A modern distribution board with Miniature Circuit Breakers (MCBs) and Residual Current Devices (RCDs) is essential for electrical safety. MCBs automatically cut off power when a circuit is overloaded, preventing overheating and fire. RCDs detect earth faults and cut power in milliseconds, preventing electrocution. If your home still uses old fuse boxes or has no circuit protection at all, upgrading your distribution board should be a top priority.</p>
@@ -526,12 +526,12 @@ insert into public.blog_posts (id, title, slug, content, excerpt, featured_image
 <p>Water and electricity are a deadly combination. Ensure all electrical points, switches, and appliances are kept away from water sources. In bathrooms and kitchens, use moisture-resistant switch plates. Never touch electrical switches or plugs with wet hands. Install ground fault protection (RCDs) in wet areas. Ensure outdoor electrical installations are properly weatherproofed. During flooding, switch off the main breaker before water reaches electrical outlets.</p>
 
 <h2>5. Use Qualified Electricians Only</h2>
-<p>Always use licensed, qualified electricians for any electrical work in your home. Unqualified work is one of the leading causes of electrical fires and injuries in Nigeria. A qualified electrician understands load calculations, proper wire sizing, earthing requirements, and Nigerian electrical standards. At JayTech, all our electricians are licensed by the Nigerian Society of Engineers and undergo regular safety training. Never attempt DIY electrical repairs unless you are a trained professional.</p>',
+<p>Always use licensed, qualified electricians for any electrical work in your home. Unqualified work is one of the leading causes of electrical fires and injuries in Nigeria. A qualified electrician understands load calculations, proper wire sizing, earthing requirements, and Nigerian electrical standards. At J Tech Solar, Starlink & CCTV Hub, all our electricians are licensed by the Nigerian Society of Engineers and undergo regular safety training. Never attempt DIY electrical repairs unless you are a trained professional.</p>',
  'Protect your family and property with these essential electrical safety tips for Nigerian homes. Learn about wiring safety, circuit protection, and more.',
  '/images/jay19.jpg',
  'bb000000-0000-0000-0000-000000000003',
  '["electrical safety", "home safety", "nigeria", "wiring", "fire prevention"]',
- 'Top 5 Electrical Safety Tips for Nigerian Homes | JayTech Blog',
+ 'Top 5 Electrical Safety Tips for Nigerian Homes | J Tech Solar, Starlink & CCTV Hub Blog',
  'Essential electrical safety tips for Nigerian homeowners. Prevent electrical fires and keep your family safe with expert advice.',
  'electrical safety nigeria, home electrical safety tips, electrical fire prevention, nigerian home safety',
  'published',
@@ -553,12 +553,12 @@ insert into public.blog_posts (id, title, slug, content, excerpt, featured_image
 <p>The quality of your solar components directly impacts system performance and lifespan. For panels, choose Tier-1 brands like LONGi, JinkoSolar, or Canadian Solar - these come with 25-year performance warranties. For inverters, reputable brands include Deye, Growatt, and Luminous. For batteries, lithium batteries offer longer lifespan and better performance but cost more upfront, while tubular lead-acid batteries are more affordable but require more maintenance. Always prioritize quality over the lowest price.</p>
 
 <h2>Step 4: Get Professional Sizing</h2>
-<p>While you can estimate your needs, professional sizing ensures accuracy. A JayTech energy consultant will analyze your consumption patterns, consider seasonal variations, account for system losses, and recommend the optimal system size. This prevents oversizing (which wastes money) or undersizing (which leaves you without enough power). Professional sizing also considers future expansion needs if you plan to add more appliances.</p>',
+<p>While you can estimate your needs, professional sizing ensures accuracy. A J Tech Solar, Starlink & CCTV Hub energy consultant will analyze your consumption patterns, consider seasonal variations, account for system losses, and recommend the optimal system size. This prevents oversizing (which wastes money) or undersizing (which leaves you without enough power). Professional sizing also considers future expansion needs if you plan to add more appliances.</p>',
  'A practical guide to choosing the perfect solar system for your Nigerian home. Learn about energy needs assessment, system types, and component selection.',
  '/images/jay20.jpg',
  'bb000000-0000-0000-0000-000000000001',
  '["solar", "home", "guide", "inverter", "battery", "energy"]',
- 'How to Choose the Right Solar System for Your Home | JayTech Blog',
+ 'How to Choose the Right Solar System for Your Home | J Tech Solar, Starlink & CCTV Hub Blog',
  'Practical guide to selecting the perfect solar system for your home in Nigeria. Energy assessment, system types, and component selection explained.',
  'choose solar system, solar system for home nigeria, right solar size, solar inverter battery nigeria',
  'draft',
@@ -569,21 +569,21 @@ insert into public.blog_posts (id, title, slug, content, excerpt, featured_image
 -- ============================================
 insert into public.technicians (id, user_id, name, phone, email, specialization, profile_photo, availability, status, bio) values
 ('dd000000-0000-0000-0000-000000000001', null,
- 'Ade Okonkwo', '+234 812 345 6789', 'ade.okonkwo@jaytech.ng',
+ 'Ade Okonkwo', '+234 812 345 6789', 'ade.okonkwo@J Tech Solar, Starlink & CCTV Hub.ng',
  'Solar Installation & Design',
  '/images/jay.png',
  'available', 'active',
  'Ade is a certified solar energy specialist with over 6 years of experience in designing and installing residential and commercial solar systems across Nigeria. He has successfully completed over 150 solar installations and holds certifications from the Nigerian Society of Engineers and multiple solar equipment manufacturers. Ade specializes in hybrid solar systems and energy optimization.'),
 
 ('dd000000-0000-0000-0000-000000000002', null,
- 'Chidi Nnamdi', '+234 813 456 7890', 'chidi.nnamdi@jaytech.ng',
+ 'Chidi Nnamdi', '+234 813 456 7890', 'chidi.nnamdi@J Tech Solar, Starlink & CCTV Hub.ng',
  'Electrical Installation & Maintenance',
  '/images/jay.png',
  'available', 'active',
  'Chidi is a licensed electrical engineer with 8 years of experience in residential and commercial electrical installations. He is an expert in building wiring, distribution systems, earthing and lightning protection, and generator changeover systems. Chidi has worked on electrical projects for major companies and residential estates in Lagos and Abuja. He holds a B.Eng in Electrical Engineering from the University of Nigeria.'),
 
 ('dd000000-0000-0000-0000-000000000003', null,
- 'Ibrahim Musa', '+234 814 567 8901', 'ibrahim.musa@jaytech.ng',
+ 'Ibrahim Musa', '+234 814 567 8901', 'ibrahim.musa@J Tech Solar, Starlink & CCTV Hub.ng',
  'Starlink & Network Installation',
  '/images/jay.png',
  'busy', 'active',
@@ -679,7 +679,7 @@ insert into public.invoices (id, invoice_number, booking_id, customer_id, items,
  'ee000000-0000-0000-0000-000000000001', null,
  '[{"description": "5kVA Solar System (Panels, Inverter, Batteries, Accessories)", "quantity": 1, "unit_price": 850000, "total": 850000}, {"description": "Professional Installation & Wiring", "quantity": 1, "unit_price": 150000, "total": 150000}, {"description": "Mounting Structure (Roof)", "quantity": 1, "unit_price": 100000, "total": 100000}, {"description": "DC/AC Protection Devices", "quantity": 1, "unit_price": 50000, "total": 50000}]',
  1150000, 172500, 1322500, 'paid', '2026-03-20',
- 'Thank you for choosing JayTech! Your system includes a 25-year panel warranty and 5-year installation warranty.'),
+ 'Thank you for choosing J Tech Solar, Starlink & CCTV Hub! Your system includes a 25-year panel warranty and 5-year installation warranty.'),
 
 ('f1000000-0000-0000-0000-000000000002', 'JTI-2609-0088',
  'ee000000-0000-0000-0000-000000000002', null,
@@ -700,7 +700,7 @@ insert into public.contact_messages (id, name, email, phone, subject, message, s
 ('aa100000-0000-0000-0000-000000000002',
  'Grace Obi', 'grace.obi@company.com', '+234 811 222 3333',
  'Starlink for Office Complex',
- 'Hello JayTech team, I manage an office complex in Wuse, Abuja and we are considering Starlink as our primary internet solution. We have about 30 offices that need reliable internet. Could you provide information about Starlink Business packages, expected speeds, and your installation process? Also, what is the estimated cost for such a setup? Best regards.',
+ 'Hello J Tech Solar, Starlink & CCTV Hub team, I manage an office complex in Wuse, Abuja and we are considering Starlink as our primary internet solution. We have about 30 offices that need reliable internet. Could you provide information about Starlink Business packages, expected speeds, and your installation process? Also, what is the estimated cost for such a setup? Best regards.',
  'Starlink Installation', 'read'),
 
 ('aa100000-0000-0000-0000-000000000003',

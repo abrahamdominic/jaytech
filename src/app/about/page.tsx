@@ -21,9 +21,9 @@ import Footer from "@/components/layout/Footer"
 import Container from "@/components/ui/Container"
 
 export const metadata: Metadata = {
-  title: "About JayTech - Solar, Starlink & Electrical Services Nigeria",
+  title: "About J Tech Solar, Starlink & CCTV Hub - Solar, Starlink & Electrical Services Nigeria",
   description:
-    "Learn about JayTech, Nigeria's trusted partner for solar energy installations, Starlink internet setup, and professional electrical services.",
+    "Learn about J Tech Solar, Starlink & CCTV Hub, Nigeria's trusted partner for solar energy installations, Starlink internet setup, and professional electrical services.",
 }
 
 const values = [
@@ -99,7 +99,7 @@ export default function AboutPage() {
           </div>
           <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-              About JayTech
+              About J Tech Solar, Starlink & CCTV Hub
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
               Nigeria&apos;s trusted partner for solar energy, Starlink internet, and
@@ -125,7 +125,7 @@ export default function AboutPage() {
               </h2>
               <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-primary" />
               <p className="mt-6 text-lg leading-relaxed text-muted">
-                Founded in Benue, Nigeria, JayTech began with a simple mission:
+                Founded in Benue, Nigeria, J Tech Solar, Starlink & CCTV Hub began with a simple mission:
                 to make reliable energy and connectivity accessible to every
                 Nigerian. What started as a small team of passionate engineers
                 has grown into one of the country&apos;s leading solar and
@@ -213,7 +213,7 @@ export default function AboutPage() {
             <div className="grid items-center gap-12 lg:grid-cols-2">
               <div>
                 <h2 className="text-3xl font-bold text-secondary sm:text-4xl">
-                  Why Choose JayTech?
+                  Why Choose J Tech Solar, Starlink & CCTV Hub?
                 </h2>
                 <p className="mt-4 text-muted leading-relaxed">
                   We combine technical expertise with a deep understanding of the
@@ -279,7 +279,7 @@ export default function AboutPage() {
                 Meet Our Team
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-muted">
-                The dedicated professionals behind JayTech&apos;s success.
+                The dedicated professionals behind J Tech Solar, Starlink & CCTV Hub&apos;s success.
               </p>
             </div>
             <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

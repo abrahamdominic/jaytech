@@ -68,10 +68,10 @@ export default function WhyChooseSection({ features = defaultFeatures }: WhyChoo
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Why JayTech
+            Why J Tech Solar, Starlink & CCTV Hub
           </p>
           <h2 className="mt-2 text-3xl font-bold text-secondary sm:text-4xl lg:text-5xl">
-            Why Choose JayTech
+            Why Choose J Tech Solar, Starlink & CCTV Hub
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted">
             We combine expertise, quality materials, and unmatched customer service to deliver results that last.

@@ -203,7 +203,7 @@ export default function SettingsPage() {
         <Card>
           <CardHeader><CardTitle>General Settings</CardTitle></CardHeader>
           <CardContent className="space-y-4">
-            <Input label="Business Name" value={businessName} onChange={(e) => setBusinessName(e.target.value)} placeholder="JayTech" />
+            <Input label="Business Name" value={businessName} onChange={(e) => setBusinessName(e.target.value)} placeholder="J Tech Solar, Starlink & CCTV Hub" />
             <Textarea label="Business Description" value={businessDescription} onChange={(e) => setBusinessDescription(e.target.value)} placeholder="Your business description" className="min-h-[80px]" />
             <Input label="Logo URL" value={logoUrl} onChange={(e) => setLogoUrl(e.target.value)} placeholder="https://..." />
             {logoUrl && <img src={logoUrl} alt="Logo" className="h-16 object-contain" />}
@@ -219,7 +219,7 @@ export default function SettingsPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Input label="Phone" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="08012345678" />
               <Input label="WhatsApp" value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} placeholder="08012345678" />
-              <Input label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="info@jaytech.ng" />
+              <Input label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="info@J Tech Solar, Starlink & CCTV Hub.ng" />
               <Input label="Working Hours" value={workingHours} onChange={(e) => setWorkingHours(e.target.value)} placeholder="Mon - Sat: 8AM - 6PM" />
             </div>
             <Input label="Address" value={address} onChange={(e) => setAddress(e.target.value)} placeholder="Full address" />
@@ -297,7 +297,7 @@ export default function SettingsPage() {
         <Card>
           <CardHeader><CardTitle>SEO Defaults</CardTitle></CardHeader>
           <CardContent className="space-y-4">
-            <Input label="Default Meta Title" value={metaTitle} onChange={(e) => setMetaTitle(e.target.value)} placeholder="JayTech - Solar & Electrical Services" />
+            <Input label="Default Meta Title" value={metaTitle} onChange={(e) => setMetaTitle(e.target.value)} placeholder="J Tech Solar, Starlink & CCTV Hub - Solar & Electrical Services" />
             <Textarea label="Default Meta Description" value={metaDescription} onChange={(e) => setMetaDescription(e.target.value)} placeholder="Default SEO description" className="min-h-[80px]" />
             <Input label="OG Image URL" value={ogImage} onChange={(e) => setOgImage(e.target.value)} placeholder="https://..." />
             {ogImage && <img src={ogImage} alt="OG Preview" className="w-full max-w-md rounded-xl border border-border" />}

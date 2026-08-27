@@ -6,7 +6,7 @@ import Footer from "@/components/layout/Footer"
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How JayTech collects, uses, stores, and protects your personal information when you use our solar, Starlink, and electrical services.",
+    "How J Tech Solar, Starlink & CCTV Hub collects, uses, stores, and protects your personal information when you use our solar, Starlink, and electrical services.",
 }
 
 const sections = [
@@ -36,7 +36,7 @@ const sections = [
 • With our technicians and service providers who need the information to deliver requested services.
 • With payment processors (Paystack) to facilitate secure transactions.
 • When required by law, regulation, legal process, or government request.
-• To protect the rights, property, or safety of JayTech, our customers, or others.
+• To protect the rights, property, or safety of J Tech Solar, Starlink & CCTV Hub, our customers, or others.
 • With your explicit consent for any other purpose.`,
   },
   {
@@ -61,7 +61,7 @@ While we strive to protect your information, no method of electronic transmissio
 • Opt out of marketing communications at any time by clicking the unsubscribe link or contacting us.
 • Withdraw consent for data processing where consent was previously given.
 • Lodge a complaint with the relevant data protection authority in Nigeria.
-To exercise any of these rights, please contact us at info@jaytech.ng.`,
+To exercise any of these rights, please contact us at info@J Tech Solar, Starlink & CCTV Hub.ng.`,
   },
   {
     title: "7. Cookies and Tracking",
@@ -87,7 +87,7 @@ You can control cookies through your browser settings. Disabling cookies may aff
   {
     title: "11. Contact Us",
     content: `If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:
-Email: info@jaytech.ng
+Email: info@J Tech Solar, Starlink & CCTV Hub.ng
 Phone: +234 704 354 1420
 WhatsApp: +234 704 354 1420
 Address: Lagos, Nigeria`,
@@ -142,8 +142,8 @@ export default function PrivacyPage() {
             <div className="mt-12 rounded-2xl bg-surface-dim border border-border p-6">
               <p className="text-sm text-muted">
                 For privacy-related inquiries, contact our Data Protection Officer at{" "}
-                <a href="mailto:info@jaytech.ng" className="font-medium text-primary hover:text-primary-dark">
-                  info@jaytech.ng
+                <a href="mailto:info@J Tech Solar, Starlink & CCTV Hub.ng" className="font-medium text-primary hover:text-primary-dark">
+                  info@J Tech Solar, Starlink & CCTV Hub.ng
                 </a>.
               </p>
             </div>

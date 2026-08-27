@@ -11,18 +11,19 @@ import HowItWorksSection from "@/components/home/HowItWorksSection"
 import CTASection from "@/components/home/CTASection"
 import FAQSection from "@/components/home/FAQSection"
 import { createClient } from "@/lib/supabase/server"
+import { normalizeImageUrl, sanitizeBrandText } from "@/lib/utils"
 import type { Service, Project, Review, FAQ } from "@/types/database"
 
 export const metadata: Metadata = {
-  title: "JayTech - Solar, Starlink & Electrical Services Nigeria",
+  title: "J Tech Solar, Starlink & CCTV Hub - Solar, Starlink & Electrical Services Nigeria",
   description:
     "Nigeria's trusted partner for solar energy installations, Starlink internet setup, electrical repairs, and smart home solutions. Professional. Reliable. Affordable.",
   openGraph: {
-    title: "JayTech - Solar, Starlink & Electrical Services Nigeria",
+    title: "J Tech Solar, Starlink & CCTV Hub - Solar, Starlink & Electrical Services Nigeria",
     description:
       "Nigeria's trusted partner for solar energy installations, Starlink internet setup, electrical repairs, and smart home solutions.",
-    url: "https://jaytech.ng",
-    siteName: "JayTech",
+    url: "https://J Tech Solar, Starlink & CCTV Hub.ng",
+    siteName: "J Tech Solar, Starlink & CCTV Hub",
     locale: "en_NG",
     type: "website",
     images: [
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
         url: "images/jay.png",
         width: 1200,
         height: 630,
-        alt: "JayTech - Solar, Starlink & Electrical Services",
+        alt: "J Tech Solar, Starlink & CCTV Hub - Solar, Starlink & Electrical Services",
       },
     ],
   },
@@ -56,7 +57,7 @@ async function getProjects(): Promise<Project[]> {
     const supabase = await createClient()
     const { data } = await supabase
       .from("projects")
-      .select("*")
+      .select("*, project_images(image_url, caption, display_order)")
       .eq("is_published", true)
       .eq("is_featured", true)
       .order("created_at", { ascending: false })
@@ -117,21 +118,21 @@ export default async function HomePage() {
     location: p.location,
     service_type: p.service_type,
     description: p.description,
-    image: p.project_images?.[0]?.image_url,
+    image: normalizeImageUrl(p.project_images?.[0]?.image_url),
   }))
 
   const mappedReviews = reviews.map((r) => ({
-    name: r.name,
+    name: sanitizeBrandText(r.name) || r.name,
     rating: r.rating,
-    review: r.review,
-    service_used: r.service_used,
+    review: sanitizeBrandText(r.review),
+    service_used: sanitizeBrandText(r.service_used),
     created_at: r.created_at,
     image_url: r.image_url,
   }))
 
   const mappedFAQs = faqs.map((f) => ({
-    question: f.question,
-    answer: f.answer,
+    question: sanitizeBrandText(f.question),
+    answer: sanitizeBrandText(f.answer),
   }))
 
   return (

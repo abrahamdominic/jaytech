@@ -17,21 +17,21 @@ const defaultProjects: ProjectCard[] = [
     location: "Lagos State",
     service_type: "Solar Installation",
     description: "A 20kW solar system installation for a luxury duplex, providing 24/7 power backup with Tesla Powerwall integration.",
-    image: undefined,
+    image: "/images/jay10.jpeg",
   },
   {
     title: "Abuja Estate Starlink Setup",
     location: "FCT Abuja",
     service_type: "Starlink Installation",
     description: "High-speed satellite internet installation for a gated estate of 50+ homes, replacing slow broadband connections.",
-    image: undefined,
+    image: "/images/jay11.jpeg",
   },
   {
     title: "Ikeja Factory Rewiring",
     location: "Lagos State",
     service_type: "Electrical Services",
     description: "Complete electrical rewiring and upgrade for a manufacturing facility, improving safety and energy efficiency by 40%.",
-    image: undefined,
+    image: "/images/jay12.jpeg",
   },
 ]
 

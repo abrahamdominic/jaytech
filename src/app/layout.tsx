@@ -11,8 +11,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "JayTech — Solar, Starlink & Electrical Services in Nigeria",
-    template: "%s | JayTech",
+    default: "J Tech Solar, Starlink & CCTV Hub — Solar, Starlink & Electrical Services in Nigeria",
+    template: "%s | J Tech Solar, Starlink & CCTV Hub",
   },
   description:
     "Nigeria's trusted partner for solar energy installations, Starlink internet setup, electrical repairs, and smart home solutions. Professional. Reliable. Affordable.",
@@ -22,20 +22,20 @@ export const metadata: Metadata = {
     "electrical services Lagos",
     "solar panels Lagos",
     "inverter installation",
-    "JayTech",
+    "J Tech Solar, Starlink & CCTV Hub",
     "solar energy Nigeria",
     "satellite internet Nigeria",
     "electrical repairs",
     "smart home Nigeria",
   ],
-  authors: [{ name: "JayTech" }],
-  creator: "JayTech",
+  authors: [{ name: "J Tech Solar, Starlink & CCTV Hub" }],
+  creator: "J Tech Solar, Starlink & CCTV Hub",
   openGraph: {
     type: "website",
     locale: "en_NG",
-    url: "https://jaytech.ng",
-    siteName: "JayTech",
-    title: "JayTech — Solar, Starlink & Electrical Services in Nigeria",
+    url: "https://J Tech Solar, Starlink & CCTV Hub.ng",
+    siteName: "J Tech Solar, Starlink & CCTV Hub",
+    title: "J Tech Solar, Starlink & CCTV Hub — Solar, Starlink & Electrical Services in Nigeria",
     description:
       "Nigeria's trusted partner for solar energy installations, Starlink internet setup, electrical repairs, and smart home solutions.",
     images: [
@@ -43,17 +43,17 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "JayTech — Solar, Starlink & Electrical Services",
+        alt: "J Tech Solar, Starlink & CCTV Hub — Solar, Starlink & Electrical Services",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "JayTech — Solar, Starlink & Electrical Services in Nigeria",
+    title: "J Tech Solar, Starlink & CCTV Hub — Solar, Starlink & Electrical Services in Nigeria",
     description:
       "Nigeria's trusted partner for solar energy installations, Starlink internet setup, electrical repairs, and smart home solutions.",
     images: ["/og-image.png"],
-    creator: "@jaytechng",
+    creator: "@J Tech Solar, Starlink & CCTV Hubng",
   },
   robots: {
     index: true,

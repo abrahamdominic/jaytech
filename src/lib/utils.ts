@@ -53,6 +53,31 @@ export function getInitials(name: string): string {
     .slice(0, 2)
 }
 
+const LEGACY_IMAGE_MAP: Record<string, string> = {
+  "/images/blog/solar-guide.jpg": "/images/jay20.jpeg",
+  "/images/blog/starlink-guide.jpg": "/images/jay18.jpeg",
+  "/images/blog/electrical-tips.jpg": "/images/jay19.jpeg",
+}
+
+export function normalizeImageUrl(url?: string | null): string | undefined {
+  if (!url) return undefined
+  if (LEGACY_IMAGE_MAP[url]) return LEGACY_IMAGE_MAP[url]
+  const m = /^(\/images\/jay)(\d+)\.jpg$/i.exec(url)
+  if (m && parseInt(m[2], 10) >= 10) {
+    return `${m[1]}${m[2]}.jpeg`
+  }
+  return url
+}
+
+export const BRAND_NAME = "J Tech Solar, Starlink & CCTV Hub"
+
+export function sanitizeBrandText(text?: string | null): string {
+  if (!text) return ""
+  return text
+    .replace(/JayTech Solar & Tech/g, BRAND_NAME)
+    .replace(/JayTech/gi, BRAND_NAME)
+}
+
 export function validateFileSize(file: File, maxSizeMB: number = 10): boolean {
   return file.size <= maxSizeMB * 1024 * 1024
 }

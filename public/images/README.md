@@ -1,4 +1,4 @@
-# JayTech Image Assets
+# J Tech Solar, Starlink & CCTV Hub Image Assets
 
 All images should be placed in the `public/images/` directory. Below is the complete list of required images with naming conventions and recommended dimensions.
 

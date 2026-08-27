@@ -2,11 +2,11 @@ import { NextRequest, NextResponse } from "next/server"
 import { getSupabaseAdmin } from "@/lib/supabase/admin"
 
 const COMPANY_INFO = {
-  name: "JayTech",
+  name: "J Tech Solar, Starlink & CCTV Hub",
   address: "Lagos, Nigeria",
   phone: "+234 704 354 1420",
-  email: "info@jaytech.ng",
-  website: "https://jaytech.ng",
+  email: "info@J Tech Solar, Starlink & CCTV Hub.ng",
+  website: "https://J Tech Solar, Starlink & CCTV Hub.ng",
 }
 
 interface RouteParams {

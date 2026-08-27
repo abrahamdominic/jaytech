@@ -82,7 +82,7 @@ export default function LoginClient() {
           </Link>
           <h1 className="text-2xl font-bold text-secondary">Welcome back</h1>
           <p className="mt-2 text-sm text-muted">
-            Sign in to your JayTech account
+            Sign in to your J Tech Solar, Starlink & CCTV Hub account
           </p>
         </div>
 

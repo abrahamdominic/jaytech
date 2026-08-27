@@ -4,7 +4,7 @@ import { useState } from "react";
 import { MapPin, X, ChevronLeft, ChevronRight } from "lucide-react";
 import Container from "@/components/ui/Container";
 import Badge from "@/components/ui/Badge";
-import { cn } from "@/lib/utils";
+import { cn, normalizeImageUrl } from "@/lib/utils";
 
 const CATEGORIES = ["all", "solar", "starlink", "electrical", "repairs"] as const;
 
@@ -88,7 +88,7 @@ export default function ProjectsGrid({ projects }: { projects: Project[] }) {
                       <div className="relative aspect-[4/3] bg-surface-dim overflow-hidden">
                         {img ? (
                           <img
-                            src={img.image_url}
+                            src={normalizeImageUrl(img.image_url) || ""}
                             alt={project.title}
                             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                           />
@@ -140,7 +140,7 @@ export default function ProjectsGrid({ projects }: { projects: Project[] }) {
             {images.length > 0 && (
               <div className="relative aspect-video bg-surface-dim">
                 <img
-                  src={images[currentImageIndex]?.image_url}
+                  src={normalizeImageUrl(images[currentImageIndex]?.image_url) || ""}
                   alt={selectedProject.title}
                   className="h-full w-full object-cover"
                 />

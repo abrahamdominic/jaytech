@@ -384,7 +384,7 @@ export default function InvoicesPage() {
               ) : selectedInvoice && (
                 <div className="space-y-4" id="invoice-preview">
                   <div className="text-center mb-6">
-                    <h3 className="text-xl font-bold text-secondary">JayTech</h3>
+                    <h3 className="text-xl font-bold text-secondary">J Tech Solar, Starlink & CCTV Hub</h3>
                     <p className="text-sm text-muted">Solar, Starlink & Electrical Services</p>
                   </div>
                   <div className="flex justify-between items-start">

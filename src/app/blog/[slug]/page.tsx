@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { formatDate } from "@/lib/utils";
+import { formatDate, normalizeImageUrl } from "@/lib/utils";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Container from "@/components/ui/Container";
@@ -35,17 +35,17 @@ const BLOG_FALLBACK = [
 <h2>2. Consider Your Location</h2>
 <p>Nigeria receives abundant sunlight year-round, but the amount varies by region. Northern states tend to get more sunlight hours than southern states, which may affect the number of panels needed.</p>
 <h2>3. Budget and Financing</h2>
-<p>Solar systems are an investment. While the upfront cost may seem high, the long-term savings on electricity bills make it worthwhile. At JayTech, we offer flexible payment plans to make solar accessible.</p>
+<p>Solar systems are an investment. While the upfront cost may seem high, the long-term savings on electricity bills make it worthwhile. At J Tech Solar, Starlink & CCTV Hub, we offer flexible payment plans to make solar accessible.</p>
 <h2>4. Quality of Components</h2>
 <p>Always choose high-quality solar panels, inverters, and batteries. Cheaper alternatives may save money initially but often fail within a few years. We recommend Tier-1 solar panels and reputable inverter brands.</p>
 <h2>5. Professional Installation</h2>
-<p>Proper installation is crucial for system performance and safety. Always work with certified solar installers like JayTech who can provide warranty support.</p>`,
-    featured_image: "/images/blog/solar-guide.jpg",
+<p>Proper installation is crucial for system performance and safety. Always work with certified solar installers like J Tech Solar, Starlink & CCTV Hub who can provide warranty support.</p>`,
+    featured_image: "/images/jay20.jpeg",
     tags: ["solar", "guide", "home"],
     published_at: "2025-06-15T10:00:00Z",
     created_at: "2025-06-15T10:00:00Z",
     category: { id: "1", name: "Solar Energy", slug: "solar-energy" },
-    author: { full_name: "JayTech Team", email: "info@jaytech.ng" },
+    author: { full_name: "J Tech Solar, Starlink & CCTV Hub Team", email: "info@J Tech Solar, Starlink & CCTV Hub.ng" },
   },
   {
     id: "2",
@@ -62,13 +62,13 @@ const BLOG_FALLBACK = [
 <h2>Pricing in Nigeria</h2>
 <p>The Starlink kit costs around ₦350,000 for the hardware, with a monthly subscription of approximately ₦38,000. Prices may vary based on exchange rates.</p>
 <h2>Installation</h2>
-<p>Professional installation is recommended for optimal performance. JayTech provides expert Starlink installation services across Nigeria.</p>`,
-    featured_image: "/images/blog/starlink-guide.jpg",
+<p>Professional installation is recommended for optimal performance. J Tech Solar, Starlink & CCTV Hub provides expert Starlink installation services across Nigeria.</p>`,
+    featured_image: "/images/jay18.jpeg",
     tags: ["starlink", "internet", "guide"],
     published_at: "2025-05-20T10:00:00Z",
     created_at: "2025-05-20T10:00:00Z",
     category: { id: "2", name: "Starlink", slug: "starlink" },
-    author: { full_name: "JayTech Team", email: "info@jaytech.ng" },
+    author: { full_name: "J Tech Solar, Starlink & CCTV Hub Team", email: "info@J Tech Solar, Starlink & CCTV Hub.ng" },
   },
   {
     id: "3",
@@ -84,12 +84,12 @@ const BLOG_FALLBACK = [
 <p>Nigeria's unstable power grid means frequent surges when power returns. Installing surge protectors and voltage stabilizers is essential.</p>
 <h2>Overloaded Circuits</h2>
 <p>Many homes have circuits that weren't designed for modern electrical loads. Adding too many appliances to a single circuit can cause overheating and fire hazards.</p>`,
-    featured_image: "/images/blog/electrical-tips.jpg",
+    featured_image: "/images/jay19.jpeg",
     tags: ["electrical", "maintenance", "safety"],
     published_at: "2025-04-10T10:00:00Z",
     created_at: "2025-04-10T10:00:00Z",
     category: { id: "3", name: "Electrical", slug: "electrical" },
-    author: { full_name: "JayTech Team", email: "info@jaytech.ng" },
+    author: { full_name: "J Tech Solar, Starlink & CCTV Hub Team", email: "info@J Tech Solar, Starlink & CCTV Hub.ng" },
   },
 ];
 
@@ -182,7 +182,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-white/50">
                   <span className="flex items-center gap-1.5">
                     <User className="h-4 w-4" />
-                    {post.author?.full_name || "JayTech Team"}
+                    {post.author?.full_name || "J Tech Solar, Starlink & CCTV Hub Team"}
                   </span>
                   <span className="flex items-center gap-1.5">
                     <Calendar className="h-4 w-4" />
@@ -199,7 +199,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 {post.featured_image && (
                   <div className="mb-8 overflow-hidden rounded-2xl">
                     <img
-                      src={post.featured_image}
+                      src={normalizeImageUrl(post.featured_image) || ""}
                       alt={post.title}
                       className="w-full object-cover"
                     />
@@ -233,7 +233,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                   </h3>
                   <div className="rounded-2xl border border-border bg-white p-5">
                     <p className="text-sm font-semibold text-secondary">
-                      {post.author?.full_name || "JayTech Team"}
+                      {post.author?.full_name || "J Tech Solar, Starlink & CCTV Hub Team"}
                     </p>
                     <p className="text-xs text-muted mt-1">
                       Providing expert insights on solar, Starlink, and
@@ -284,7 +284,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                         <div className="aspect-[16/10] bg-surface-dim overflow-hidden">
                           {rp.featured_image ? (
                             <img
-                              src={rp.featured_image}
+                              src={normalizeImageUrl(rp.featured_image) || ""}
                               alt={rp.title}
                               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                             />

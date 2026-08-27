@@ -57,8 +57,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "info@jaytech.ng",
-    href: "mailto:info@jaytech.ng",
+    value: "info@J Tech Solar, Starlink & CCTV Hub.ng",
+    href: "mailto:info@J Tech Solar, Starlink & CCTV Hub.ng",
     description: "We reply within 24 hours",
   },
   {

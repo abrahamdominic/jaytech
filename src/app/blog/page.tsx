@@ -7,7 +7,7 @@ import BlogList from "./BlogList";
 export const metadata: Metadata = {
   title: "Blog & Guides",
   description:
-    "Expert tips, guides, and news about solar energy, Starlink internet, and electrical services in Nigeria from JayTech.",
+    "Expert tips, guides, and news about solar energy, Starlink internet, and electrical services in Nigeria from J Tech Solar, Starlink & CCTV Hub.",
 };
 
 const BLOG_FALLBACK = [
@@ -18,12 +18,12 @@ const BLOG_FALLBACK = [
     excerpt:
       "Discover the key factors to consider when selecting a solar energy system for your Nigerian home, from capacity to budget.",
     content: "",
-    featured_image: "/images/blog/solar-guide.jpg",
+    featured_image: "/images/jay20.jpeg",
     tags: ["solar", "guide"],
     published_at: "2025-06-15T10:00:00Z",
     created_at: "2025-06-15T10:00:00Z",
     category: { id: "1", name: "Solar Energy", slug: "solar-energy" },
-    author: { full_name: "JayTech Team" },
+    author: { full_name: "J Tech Solar, Starlink & CCTV Hub Team" },
   },
   {
     id: "2",
@@ -32,12 +32,12 @@ const BLOG_FALLBACK = [
     excerpt:
       "Everything about Starlink satellite internet availability, pricing, and installation in Nigeria.",
     content: "",
-    featured_image: "/images/blog/starlink-guide.jpg",
+    featured_image: "/images/jay18.jpeg",
     tags: ["starlink", "internet"],
     published_at: "2025-05-20T10:00:00Z",
     created_at: "2025-05-20T10:00:00Z",
     category: { id: "2", name: "Starlink", slug: "starlink" },
-    author: { full_name: "JayTech Team" },
+    author: { full_name: "J Tech Solar, Starlink & CCTV Hub Team" },
   },
   {
     id: "3",
@@ -46,12 +46,12 @@ const BLOG_FALLBACK = [
     excerpt:
       "Learn about the most frequent electrical issues in Nigerian homes and how to prevent them.",
     content: "",
-    featured_image: "/images/blog/electrical-tips.jpg",
+    featured_image: "/images/jay19.jpeg",
     tags: ["electrical", "maintenance"],
     published_at: "2025-04-10T10:00:00Z",
     created_at: "2025-04-10T10:00:00Z",
     category: { id: "3", name: "Electrical", slug: "electrical" },
-    author: { full_name: "JayTech Team" },
+    author: { full_name: "J Tech Solar, Starlink & CCTV Hub Team" },
   },
 ];
 

@@ -13,11 +13,11 @@ import type { Service } from "@/types/database"
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "Explore JayTech's full range of solar installation, Starlink internet setup, electrical services, repairs, and smart home solutions across Nigeria.",
+    "Explore J Tech Solar, Starlink & CCTV Hub's full range of solar installation, Starlink internet setup, electrical services, repairs, and smart home solutions across Nigeria.",
   openGraph: {
-    title: "Our Services | JayTech",
+    title: "Our Services | J Tech Solar, Starlink & CCTV Hub",
     description:
-      "Explore JayTech's full range of solar installation, Starlink internet setup, electrical services, repairs, and smart home solutions.",
+      "Explore J Tech Solar, Starlink & CCTV Hub's full range of solar installation, Starlink internet setup, electrical services, repairs, and smart home solutions.",
   },
 }
 
@@ -69,7 +69,7 @@ const fallbackServices: Service[] = [
     starting_price: 250000,
     price_range_min: 250000,
     price_range_max: 5000000,
-    meta_title: "Solar Installation Nigeria | JayTech",
+    meta_title: "Solar Installation Nigeria | J Tech Solar, Starlink & CCTV Hub",
     meta_description: "Professional solar panel installation services across Nigeria",
     is_active: true,
     display_order: 1,
@@ -111,7 +111,7 @@ const fallbackServices: Service[] = [
     starting_price: 75000,
     price_range_min: 75000,
     price_range_max: 200000,
-    meta_title: "Starlink Installation Nigeria | JayTech",
+    meta_title: "Starlink Installation Nigeria | J Tech Solar, Starlink & CCTV Hub",
     meta_description: "Professional Starlink satellite internet installation across Nigeria",
     is_active: true,
     display_order: 2,
@@ -153,7 +153,7 @@ const fallbackServices: Service[] = [
     starting_price: 0,
     price_range_min: 0,
     price_range_max: 0,
-    meta_title: "Electrical Services Nigeria | JayTech",
+    meta_title: "Electrical Services Nigeria | J Tech Solar, Starlink & CCTV Hub",
     meta_description: "Professional electrical wiring and installation services across Nigeria",
     is_active: true,
     display_order: 3,
@@ -195,7 +195,7 @@ const fallbackServices: Service[] = [
     starting_price: 15000,
     price_range_min: 15000,
     price_range_max: 200000,
-    meta_title: "Solar & Electrical Repairs Nigeria | JayTech",
+    meta_title: "Solar & Electrical Repairs Nigeria | J Tech Solar, Starlink & CCTV Hub",
     meta_description: "Expert repair and maintenance services for solar and electrical systems",
     is_active: true,
     display_order: 4,
@@ -237,7 +237,7 @@ const fallbackServices: Service[] = [
     starting_price: 0,
     price_range_min: 0,
     price_range_max: 0,
-    meta_title: "Free Energy Consultation Nigeria | JayTech",
+    meta_title: "Free Energy Consultation Nigeria | J Tech Solar, Starlink & CCTV Hub",
     meta_description: "Free expert consultation for solar, Starlink, and electrical solutions",
     is_active: true,
     display_order: 5,
@@ -279,7 +279,7 @@ const fallbackServices: Service[] = [
     starting_price: 50000,
     price_range_min: 50000,
     price_range_max: 3000000,
-    meta_title: "Electrical Gadgets & Smart Home Nigeria | JayTech",
+    meta_title: "Electrical Gadgets & Smart Home Nigeria | J Tech Solar, Starlink & CCTV Hub",
     meta_description: "Quality electrical appliances, inverters, and smart home devices",
     is_active: true,
     display_order: 6,

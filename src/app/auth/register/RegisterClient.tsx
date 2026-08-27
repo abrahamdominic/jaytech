@@ -108,7 +108,7 @@ export default function RegisterClient() {
             Create your account
           </h1>
           <p className="mt-2 text-sm text-muted">
-            Join JayTech for reliable solar and tech services
+            Join J Tech Solar, Starlink & CCTV Hub for reliable solar and tech services
           </p>
         </div>
 

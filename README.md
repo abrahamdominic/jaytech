@@ -1,4 +1,4 @@
-# JayTech
+# J Tech Solar, Starlink & CCTV Hub
 
 Professional solar installation, Starlink setup, electrical solutions, and reliable energy services delivered nationwide across Nigeria.
 
@@ -87,7 +87,7 @@ Professional solar installation, Starlink setup, electrical solutions, and relia
 
 ```bash
 git clone <repository-url>
-cd jaytech
+cd J Tech Solar, Starlink & CCTV Hub
 npm install
 ```
 
@@ -113,14 +113,14 @@ NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY=your_paystack_public_key
 
 # Resend (Email)
 RESEND_API_KEY=your_resend_api_key
-EMAIL_FROM=noreply@jaytech.ng
+EMAIL_FROM=noreply@J Tech Solar, Starlink & CCTV Hub.ng
 
 # WhatsApp
 NEXT_PUBLIC_WHATSAPP_NUMBER=2348000000000
 
 # App
 NEXT_PUBLIC_APP_URL=http://localhost:3000
-NEXT_PUBLIC_APP_NAME=JayTech
+NEXT_PUBLIC_APP_NAME=J Tech Solar, Starlink & CCTV Hub
 ```
 
 ### 3. Database Setup
@@ -154,7 +154,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 ## Project Structure
 
 ```
-jaytech/
+J Tech Solar, Starlink & CCTV Hub/
 ├── public/
 │   └── images/           # Static image assets
 ├── src/
@@ -229,4 +229,4 @@ Admin roles:
 
 ## License
 
-This project is proprietary software owned by JayTech. All rights reserved.
+This project is proprietary software owned by J Tech Solar, Starlink & CCTV Hub. All rights reserved.

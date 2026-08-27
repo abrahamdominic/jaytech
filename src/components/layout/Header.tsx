@@ -49,15 +49,19 @@ export default function Header() {
         <Container>
           <div className="flex h-18 items-center justify-between">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-secondary font-black text-lg shadow-lg shadow-primary/30 transition-transform group-hover:scale-105">
-                J
+              <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-primary p-1 shadow-lg shadow-primary/30 transition-transform group-hover:scale-105">
+                <img
+                  src="/images/jay.png"
+                  alt="J Tech Solar, Starlink & CCTV Hub"
+                  className="h-full w-full object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-xl font-bold tracking-tight text-secondary leading-none">
-                  <span className="text-primary">Jay</span>Tech
+                  J Tech Solar
                 </span>
                 <span className="text-[10px] font-medium uppercase tracking-widest text-muted leading-none mt-0.5">
-                  Solar &amp; Tech
+                  Starlink &amp; CCTV Hub
                 </span>
               </div>
             </Link>

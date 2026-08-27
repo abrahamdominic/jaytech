@@ -1,4 +1,4 @@
--- JayTech Database Schema
+-- J Tech Solar, Starlink & CCTV Hub Database Schema
 -- Run this in Supabase SQL Editor
 
 -- Enable UUID extension

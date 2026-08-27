@@ -6,13 +6,13 @@ import Footer from "@/components/layout/Footer"
 import BookingForm from "@/components/booking/BookingForm"
 
 export const metadata: Metadata = {
-  title: "Book a Service - JayTech",
+  title: "Book a Service - J Tech Solar, Starlink & CCTV Hub",
   description:
-    "Book a solar, Starlink, or electrical service with JayTech. Tell us about your project and we'll get back to you within 2 hours.",
+    "Book a solar, Starlink, or electrical service with J Tech Solar, Starlink & CCTV Hub. Tell us about your project and we'll get back to you within 2 hours.",
   openGraph: {
-    title: "Book a Service - JayTech",
+    title: "Book a Service - J Tech Solar, Starlink & CCTV Hub",
     description:
-      "Book a solar, Starlink, or electrical service with JayTech. Tell us about your project and we'll get back to you.",
+      "Book a solar, Starlink, or electrical service with J Tech Solar, Starlink & CCTV Hub. Tell us about your project and we'll get back to you.",
     type: "website",
   },
 }
@@ -71,7 +71,7 @@ export default function BookingPage() {
                 </div>
               </div>
               <a
-                href="https://wa.me/2347043541420?text=Hello%20JayTech!%20I%27d%20like%20to%20book%20a%20service."
+                href="https://wa.me/2347043541420?text=Hello%20J Tech Solar, Starlink & CCTV Hub!%20I%27d%20like%20to%20book%20a%20service."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-green-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-green-600/25 transition-all hover:bg-green-700 hover:shadow-xl hover:shadow-green-600/30 active:scale-[0.98]"

@@ -30,32 +30,32 @@ const quickLinks = [
 const socialLinks = [
   {
     label: "Facebook",
-    href: "https://facebook.com/jaytechng",
+    href: "https://facebook.com/J Tech Solar, Starlink & CCTV Hubng",
     path: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z",
   },
   {
     label: "Twitter",
-    href: "https://twitter.com/jaytechng",
+    href: "https://twitter.com/J Tech Solar, Starlink & CCTV Hubng",
     path: "M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z",
   },
   {
     label: "Instagram",
-    href: "https://instagram.com/jaytechng",
+    href: "https://instagram.com/J Tech Solar, Starlink & CCTV Hubng",
     path: "M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01M6.5 3h11A3.5 3.5 0 0121 6.5v11a3.5 3.5 0 01-3.5 3.5h-11A3.5 3.5 0 013 17.5v-11A3.5 3.5 0 016.5 3z",
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/company/jaytechng",
+    href: "https://linkedin.com/company/J Tech Solar, Starlink & CCTV Hubng",
     path: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 2a2 2 0 110 4 2 2 0 010-4z",
   },
   {
     label: "YouTube",
-    href: "https://youtube.com/@jaytechng",
+    href: "https://youtube.com/@J Tech Solar, Starlink & CCTV Hubng",
     path: "M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43zM9.75 15.02V8.48l5.75 3.27-5.75 3.27z",
   },
   {
     label: "TikTok",
-    href: "https://tiktok.com/@jaytechng",
+    href: "https://tiktok.com/@J Tech Solar, Starlink & CCTV Hubng",
     path: "M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.48v-7.21a8.16 8.16 0 005.58 2.18v-3.45a4.85 4.85 0 01-2-.78V6.69h2z",
   },
 ];
@@ -70,15 +70,19 @@ export default function Footer() {
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
             <div className="sm:col-span-2 lg:col-span-1">
               <Link href="/" className="inline-flex items-center gap-2 group mb-5">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-secondary font-black text-lg shadow-lg shadow-primary/30 transition-transform group-hover:scale-105">
-                  J
+                <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-primary p-1 shadow-lg shadow-primary/30 transition-transform group-hover:scale-105">
+                  <img
+                    src="/images/jay.png"
+                    alt="J Tech Solar, Starlink & CCTV Hub"
+                    className="h-full w-full object-contain"
+                  />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-xl font-bold tracking-tight text-white leading-none">
-                    <span className="text-primary">Jay</span>Tech
+                    J Tech Solar
                   </span>
                   <span className="text-[10px] font-medium uppercase tracking-widest text-white/50 leading-none mt-0.5">
-                    Solar &amp; Tech
+                    Starlink &amp; CCTV Hub
                   </span>
                 </div>
               </Link>
@@ -192,11 +196,11 @@ export default function Footer() {
                 </li>
                 <li>
                   <a
-                    href="mailto:info@jaytech.ng"
+                    href="mailto:info@J Tech Solar, Starlink & CCTV Hub.ng"
                     className="group flex items-start gap-3 text-sm text-white/60 transition-colors hover:text-primary"
                   >
                     <Mail className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                    <span>info@jaytech.ng</span>
+                    <span>info@J Tech Solar, Starlink & CCTV Hub.ng</span>
                   </a>
                 </li>
                 <li>
@@ -219,12 +223,12 @@ export default function Footer() {
         <Container>
           <div className="flex flex-col items-center justify-between gap-4 py-6 sm:flex-row">
             <p className="text-xs text-white/40">
-              &copy; {currentYear} JayTech. All rights reserved.
+              &copy; {currentYear} J Tech Solar, Starlink & CCTV Hub. All rights reserved.
             </p>
             <div className="flex items-center gap-1 text-xs text-white/40">
               <span>Powered by</span>
               <Zap className="h-3 w-3 text-primary" />
-              <span className="font-medium text-white/60">JayTech</span>
+              <span className="font-medium text-white/60">J Tech Solar, Starlink & CCTV Hub</span>
             </div>
           </div>
         </Container>

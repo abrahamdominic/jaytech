@@ -17,14 +17,14 @@ const defaultReviews: ReviewCard[] = [
   {
     name: "Adewale Johnson",
     rating: 5,
-    review: "JayTech did an amazing job installing our solar panels. The team was professional, punctual, and the system has been running flawlessly for 6 months. Our electricity bills dropped by 80%! Highly recommended.",
+    review: "J Tech Solar, Starlink & CCTV Hub did an amazing job installing our solar panels. The team was professional, punctual, and the system has been running flawlessly for 6 months. Our electricity bills dropped by 80%! Highly recommended.",
     service_used: "Solar Installation",
     created_at: "2025-11-15",
   },
   {
     name: "Chioma Okonkwo",
     rating: 5,
-    review: "We struggled with poor internet for years until JayTech set up our Starlink. The installation was quick and the speed is incredible. My kids can finally attend online classes without interruptions.",
+    review: "We struggled with poor internet for years until J Tech Solar, Starlink & CCTV Hub set up our Starlink. The installation was quick and the speed is incredible. My kids can finally attend online classes without interruptions.",
     service_used: "Starlink Installation",
     created_at: "2025-10-22",
   },
@@ -38,14 +38,14 @@ const defaultReviews: ReviewCard[] = [
   {
     name: "Fatima Abubakar",
     rating: 5,
-    review: "Fast response time! Our inverter stopped working and JayTech had a technician at our door within 3 hours. The repair was done on the spot and everything has been working perfectly since.",
+    review: "Fast response time! Our inverter stopped working and J Tech Solar, Starlink & CCTV Hub had a technician at our door within 3 hours. The repair was done on the spot and everything has been working perfectly since.",
     service_used: "Repairs & Maintenance",
     created_at: "2025-12-01",
   },
   {
     name: "Oluwaseun Adeyemi",
     rating: 5,
-    review: "The consultation was incredibly helpful. JayTech's team assessed our energy needs and designed a custom solar solution that fit our budget perfectly. We're saving so much on electricity now.",
+    review: "The consultation was incredibly helpful. J Tech Solar, Starlink & CCTV Hub's team assessed our energy needs and designed a custom solar solution that fit our budget perfectly. We're saving so much on electricity now.",
     service_used: "Consultation",
     created_at: "2026-01-05",
   },

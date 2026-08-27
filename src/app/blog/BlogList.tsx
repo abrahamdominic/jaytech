@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Calendar, Tag, ArrowRight } from "lucide-react";
 import Container from "@/components/ui/Container";
-import { formatDate } from "@/lib/utils";
+import { formatDate, normalizeImageUrl } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 
 interface Author {
@@ -88,7 +88,7 @@ export default function BlogList({ posts }: { posts: BlogPost[] }) {
                       <div className="relative aspect-[16/10] bg-surface-dim overflow-hidden">
                         {post.featured_image ? (
                           <img
-                            src={post.featured_image}
+                            src={normalizeImageUrl(post.featured_image) || ""}
                             alt={post.title}
                             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                           />

@@ -54,7 +54,7 @@ const SERVICE_CONFIG: Record<
   default: {
     gradient: "from-blue-400 via-primary to-accent",
     Icon: Cpu,
-    label: "JayTech",
+    label: "J Tech Solar, Starlink & CCTV Hub",
   },
 }
 

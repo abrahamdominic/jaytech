@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next"
 import { createClient } from "@supabase/supabase-js"
 
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://jaytech.ng"
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://J Tech Solar, Starlink & CCTV Hub.ng"
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticPages: MetadataRoute.Sitemap = [

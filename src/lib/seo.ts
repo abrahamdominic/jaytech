@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://jaytech.ng"
+const BASE_URL = process.env.NEXT_PUBLIC_APP_URL || "https://J Tech Solar, Starlink & CCTV Hub.ng"
 
 interface GenerateMetadataOptions {
   title: string
@@ -22,7 +22,7 @@ export function generateMetadata({
   modifiedTime,
 }: GenerateMetadataOptions): Metadata {
   const url = `${BASE_URL}${path}`
-  const fullTitle = title.includes("JayTech") ? title : `${title} | JayTech`
+  const fullTitle = title.includes("J Tech Solar, Starlink & CCTV Hub") ? title : `${title} | J Tech Solar, Starlink & CCTV Hub`
 
   return {
     title: fullTitle,
@@ -31,7 +31,7 @@ export function generateMetadata({
       title: fullTitle,
       description,
       url,
-      siteName: "JayTech",
+      siteName: "J Tech Solar, Starlink & CCTV Hub",
       locale: "en_NG",
       type,
       images: [
@@ -69,11 +69,11 @@ interface LocalBusinessSchemaProps {
 }
 
 export function generateLocalBusinessSchema({
-  name = "JayTech",
+  name = "J Tech Solar, Starlink & CCTV Hub",
   description = "Nigeria's trusted partner for solar energy installations, Starlink internet setup, electrical repairs, and smart home solutions.",
   url = BASE_URL,
   telephone = "+2347043541420",
-  email = "info@jaytech.ng",
+  email = "info@J Tech Solar, Starlink & CCTV Hub.ng",
   address = "Lagos, Nigeria",
   city = "Lagos",
   state = "Lagos",
@@ -113,11 +113,11 @@ export function generateLocalBusinessSchema({
       },
     ],
     sameAs: [
-      "https://facebook.com/jaytechng",
-      "https://twitter.com/jaytechng",
-      "https://instagram.com/jaytechng",
-      "https://linkedin.com/company/jaytechng",
-      "https://youtube.com/@jaytechng",
+      "https://facebook.com/J Tech Solar, Starlink & CCTV Hubng",
+      "https://twitter.com/J Tech Solar, Starlink & CCTV Hubng",
+      "https://instagram.com/J Tech Solar, Starlink & CCTV Hubng",
+      "https://linkedin.com/company/J Tech Solar, Starlink & CCTV Hubng",
+      "https://youtube.com/@J Tech Solar, Starlink & CCTV Hubng",
     ],
   }
 }
@@ -145,7 +145,7 @@ export function generateServiceSchema({
     url: url || `${BASE_URL}/services`,
     provider: {
       "@type": "LocalBusiness",
-      name: "JayTech",
+      name: "J Tech Solar, Starlink & CCTV Hub",
       url: BASE_URL,
     },
     areaServed: {
@@ -198,7 +198,7 @@ export function generateBlogPostingSchema({
   description,
   url,
   image,
-  author = "JayTech Team",
+  author = "J Tech Solar, Starlink & CCTV Hub Team",
   datePublished,
   dateModified,
 }: BlogPostingSchemaProps) {
@@ -214,7 +214,7 @@ export function generateBlogPostingSchema({
     },
     publisher: {
       "@type": "Organization",
-      name: "JayTech",
+      name: "J Tech Solar, Starlink & CCTV Hub",
       logo: {
         "@type": "ImageObject",
         url: `${BASE_URL}/favicon.ico`,

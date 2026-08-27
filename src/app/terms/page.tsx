@@ -7,17 +7,17 @@ import { ChevronRight } from "lucide-react"
 export const metadata: Metadata = {
   title: "Terms and Conditions",
   description:
-    "Terms and conditions governing the use of JayTech services, website, and platform for solar, Starlink, and electrical services in Nigeria.",
+    "Terms and conditions governing the use of J Tech Solar, Starlink & CCTV Hub services, website, and platform for solar, Starlink, and electrical services in Nigeria.",
 }
 
 const sections = [
   {
     title: "1. Acceptance of Terms",
-    content: `By accessing and using the JayTech website and services, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you should not use our website or services. These terms apply to all visitors, users, and customers of JayTech.`,
+    content: `By accessing and using the J Tech Solar, Starlink & CCTV Hub website and services, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you should not use our website or services. These terms apply to all visitors, users, and customers of J Tech Solar, Starlink & CCTV Hub.`,
   },
   {
     title: "2. Services",
-    content: `JayTech provides solar energy installation, Starlink internet setup, electrical services, repairs and maintenance, consultation, and electrical gadgets supply and installation across Nigeria. All services are subject to availability and confirmation by our team. We reserve the right to modify, suspend, or discontinue any service at any time without prior notice.`,
+    content: `J Tech Solar, Starlink & CCTV Hub provides solar energy installation, Starlink internet setup, electrical services, repairs and maintenance, consultation, and electrical gadgets supply and installation across Nigeria. All services are subject to availability and confirmation by our team. We reserve the right to modify, suspend, or discontinue any service at any time without prior notice.`,
   },
   {
     title: "3. Booking and Scheduling",
@@ -29,15 +29,15 @@ const sections = [
   },
   {
     title: "5. Cancellation and Refund Policy",
-    content: `You may cancel a booked service up to 24 hours before the scheduled appointment at no charge. Cancellations within 24 hours may incur a nominal fee. Refunds for prepayments will be processed within 7-14 business days. If JayTech cancels a service, you will receive a full refund. For completed services, refunds are handled on a case-by-case basis within our warranty terms.`,
+    content: `You may cancel a booked service up to 24 hours before the scheduled appointment at no charge. Cancellations within 24 hours may incur a nominal fee. Refunds for prepayments will be processed within 7-14 business days. If J Tech Solar, Starlink & CCTV Hub cancels a service, you will receive a full refund. For completed services, refunds are handled on a case-by-case basis within our warranty terms.`,
   },
   {
     title: "6. Warranty and Guarantees",
-    content: `JayTech provides the following warranty coverage: Solar panel installations — 5-year warranty on workmanship; Inverters and batteries — 2-year manufacturer warranty; Electrical work — 1-year warranty on workmanship; Starlink installations — 1-year service guarantee on installation quality. Warranty claims must be submitted through our official channels. Warranty does not cover damage from misuse, natural disasters, unauthorized modifications, or normal wear and tear.`,
+    content: `J Tech Solar, Starlink & CCTV Hub provides the following warranty coverage: Solar panel installations — 5-year warranty on workmanship; Inverters and batteries — 2-year manufacturer warranty; Electrical work — 1-year warranty on workmanship; Starlink installations — 1-year service guarantee on installation quality. Warranty claims must be submitted through our official channels. Warranty does not cover damage from misuse, natural disasters, unauthorized modifications, or normal wear and tear.`,
   },
   {
     title: "7. Liability Limitations",
-    content: `JayTech shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from the use of our services. Our total liability for any claim shall not exceed the amount paid for the specific service giving rise to the claim. We are not responsible for delays caused by force majeure events including but not limited to natural disasters, government actions, power outages, or supply chain disruptions.`,
+    content: `J Tech Solar, Starlink & CCTV Hub shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from the use of our services. Our total liability for any claim shall not exceed the amount paid for the specific service giving rise to the claim. We are not responsible for delays caused by force majeure events including but not limited to natural disasters, government actions, power outages, or supply chain disruptions.`,
   },
   {
     title: "8. Customer Responsibilities",
@@ -45,7 +45,7 @@ const sections = [
   },
   {
     title: "9. Intellectual Property",
-    content: `All content on the JayTech website including text, graphics, logos, images, software, and other materials are the intellectual property of JayTech and are protected by Nigerian and international copyright laws. You may not reproduce, distribute, modify, or create derivative works from any content without our prior written consent.`,
+    content: `All content on the J Tech Solar, Starlink & CCTV Hub website including text, graphics, logos, images, software, and other materials are the intellectual property of J Tech Solar, Starlink & CCTV Hub and are protected by Nigerian and international copyright laws. You may not reproduce, distribute, modify, or create derivative works from any content without our prior written consent.`,
   },
   {
     title: "10. Privacy",
@@ -57,11 +57,11 @@ const sections = [
   },
   {
     title: "12. Changes to Terms",
-    content: `JayTech reserves the right to update or modify these Terms and Conditions at any time without prior notice. Changes will be effective immediately upon posting on this page. We encourage you to review this page periodically for any updates. Your continued use of our services after any changes constitutes acceptance of the new terms.`,
+    content: `J Tech Solar, Starlink & CCTV Hub reserves the right to update or modify these Terms and Conditions at any time without prior notice. Changes will be effective immediately upon posting on this page. We encourage you to review this page periodically for any updates. Your continued use of our services after any changes constitutes acceptance of the new terms.`,
   },
   {
     title: "13. Contact Information",
-    content: `If you have any questions about these Terms and Conditions, please contact us at info@jaytech.ng or call us at +234 704 354 1420. You can also reach us via WhatsApp at +234 704 354 1420.`,
+    content: `If you have any questions about these Terms and Conditions, please contact us at info@J Tech Solar, Starlink & CCTV Hub.ng or call us at +234 704 354 1420. You can also reach us via WhatsApp at +234 704 354 1420.`,
   },
 ]
 
@@ -112,8 +112,8 @@ export default function TermsPage() {
             <div className="mt-12 rounded-2xl bg-surface-dim border border-border p-6">
               <p className="text-sm text-muted">
                 If you have any questions about these terms, please contact us at{" "}
-                <a href="mailto:info@jaytech.ng" className="font-medium text-primary hover:text-primary-dark">
-                  info@jaytech.ng
+                <a href="mailto:info@J Tech Solar, Starlink & CCTV Hub.ng" className="font-medium text-primary hover:text-primary-dark">
+                  info@J Tech Solar, Starlink & CCTV Hub.ng
                 </a>{" "}
                 or call{" "}
                 <a href="tel:+2347043541420" className="font-medium text-primary hover:text-primary-dark">

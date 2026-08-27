@@ -50,10 +50,23 @@ export default function MobileNav({ isOpen, onClose, navItems }: MobileNavProps)
             <Link
               href="/"
               onClick={onClose}
-              className="text-2xl font-bold"
+              className="flex items-center gap-2"
             >
-              <span className="text-primary">Jay</span>
-              <span className="text-secondary">Tech</span>
+              <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-primary p-1">
+                <img
+                  src="/images/jay.png"
+                  alt="J Tech Solar, Starlink & CCTV Hub"
+                  className="h-full w-full object-contain"
+                />
+              </div>
+              <span className="flex flex-col">
+                <span className="text-lg font-bold leading-none">
+                  <span className="text-primary">J Tech Solar</span>
+                </span>
+                <span className="text-[10px] font-medium uppercase tracking-widest text-muted leading-none mt-0.5">
+                  Starlink &amp; CCTV Hub
+                </span>
+              </span>
             </Link>
             <button
               onClick={onClose}

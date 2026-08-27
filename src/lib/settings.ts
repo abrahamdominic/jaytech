@@ -21,25 +21,25 @@ function invalidateCache() {
 }
 
 const DEFAULT_SETTINGS: SiteSettings = {
-  business_name: "JayTech",
+  business_name: "J Tech Solar, Starlink & CCTV Hub",
   business_description:
     "Nigeria's trusted partner for solar energy installations, Starlink internet setup, electrical repairs, and smart home solutions.",
   logo_url: "",
   favicon_url: "",
   phone: "+2347043541420",
   whatsapp: "2347043541420",
-  email: "info@jaytech.ng",
+  email: "info@J Tech Solar, Starlink & CCTV Hub.ng",
   address: "Lagos, Nigeria",
   working_hours: "Mon - Sat: 8am - 6pm",
   state: "Lagos",
   city: "Lagos",
   service_areas: ["Lagos", "Abuja", "Port Harcourt", "Ibadan", "Kano"],
   social_links: {
-    facebook: "https://facebook.com/jaytechng",
-    twitter: "https://twitter.com/jaytechng",
-    instagram: "https://instagram.com/jaytechng",
-    linkedin: "https://linkedin.com/company/jaytechng",
-    youtube: "https://youtube.com/@jaytechng",
+    facebook: "https://facebook.com/J Tech Solar, Starlink & CCTV Hubng",
+    twitter: "https://twitter.com/J Tech Solar, Starlink & CCTV Hubng",
+    instagram: "https://instagram.com/J Tech Solar, Starlink & CCTV Hubng",
+    linkedin: "https://linkedin.com/company/J Tech Solar, Starlink & CCTV Hubng",
+    youtube: "https://youtube.com/@J Tech Solar, Starlink & CCTV Hubng",
   },
   hero_headline: "Powering Nigeria with Solar, Starlink & Smart Solutions",
   hero_subheadline:
@@ -47,9 +47,9 @@ const DEFAULT_SETTINGS: SiteSettings = {
   hero_cta_text: "Book a Service",
   hero_cta_secondary: "Get a Free Quote",
   about_text:
-    "JayTech is a leading solar and tech company in Nigeria, providing professional energy solutions and smart home services.",
+    "J Tech Solar, Starlink & CCTV Hub is a leading solar and tech company in Nigeria, providing professional energy solutions and smart home services.",
   meta_title:
-    "JayTech - Solar, Starlink & Electrical Services in Nigeria",
+    "J Tech Solar, Starlink & CCTV Hub - Solar, Starlink & Electrical Services in Nigeria",
   meta_description:
     "Nigeria's trusted partner for solar energy installations, Starlink internet setup, electrical repairs, and smart home solutions. Professional. Reliable. Affordable.",
   og_image: "/og-image.png",

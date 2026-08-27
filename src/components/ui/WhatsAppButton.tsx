@@ -9,7 +9,7 @@ interface WhatsAppButtonProps {
 }
 
 export default function WhatsAppButton({
-  message = "Hello JayTech! I'd like to inquire about your services.",
+  message = "Hello J Tech Solar, Starlink & CCTV Hub! I'd like to inquire about your services.",
 }: WhatsAppButtonProps) {
   const pathname = usePathname()
 

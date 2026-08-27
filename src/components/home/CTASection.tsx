@@ -17,7 +17,7 @@ export default function CTASection() {
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-300">
           Whether it&apos;s solar energy, Starlink internet, or electrical services
-          &mdash; JayTech has you covered. Let&apos;s build the solution that fits your needs.
+          &mdash; J Tech Solar, Starlink & CCTV Hub has you covered. Let&apos;s build the solution that fits your needs.
         </p>
 
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -32,7 +32,7 @@ export default function CTASection() {
             href="/contact"
             className="inline-flex items-center gap-2 rounded-lg border-2 border-white/20 px-8 py-4 text-base font-semibold text-white transition-all duration-300 hover:border-white/40 hover:bg-white/5"
           >
-            Talk to JayTech
+            Talk to J Tech Solar, Starlink & CCTV Hub
           </Link>
           <a
             href="https://wa.me/2347043541420"

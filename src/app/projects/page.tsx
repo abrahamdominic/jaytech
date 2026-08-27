@@ -9,7 +9,7 @@ import ProjectsGrid from "./ProjectsGrid";
 export const metadata: Metadata = {
   title: "Our Projects",
   description:
-    "Explore JayTech's completed solar, Starlink, electrical, and repair projects across Nigeria.",
+    "Explore J Tech Solar, Starlink & CCTV Hub's completed solar, Starlink, electrical, and repair projects across Nigeria.",
 };
 
 const PROJECTS_FALLBACK = [
