@@ -8,7 +8,7 @@ interface ProjectCard {
   location: string
   service_type: string
   description: string
-  image_url?: string
+  image?: string
 }
 
 const defaultProjects: ProjectCard[] = [
@@ -17,21 +17,21 @@ const defaultProjects: ProjectCard[] = [
     location: "Lagos State",
     service_type: "Solar Installation",
     description: "A 20kW solar system installation for a luxury duplex, providing 24/7 power backup with Tesla Powerwall integration.",
-    image_url: undefined,
+    image: undefined,
   },
   {
     title: "Abuja Estate Starlink Setup",
     location: "FCT Abuja",
     service_type: "Starlink Installation",
     description: "High-speed satellite internet installation for a gated estate of 50+ homes, replacing slow broadband connections.",
-    image_url: undefined,
+    image: undefined,
   },
   {
     title: "Ikeja Factory Rewiring",
     location: "Lagos State",
     service_type: "Electrical Services",
     description: "Complete electrical rewiring and upgrade for a manufacturing facility, improving safety and energy efficiency by 40%.",
-    image_url: undefined,
+    image: undefined,
   },
 ]
 
@@ -80,15 +80,22 @@ export default function ProjectsSection({ projects = defaultProjects }: Projects
               key={project.title}
               className="group overflow-hidden rounded-2xl border border-border bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              {/* Image placeholder */}
+              {/* Image */}
               <div className="relative h-56 overflow-hidden bg-gradient-to-br from-secondary via-secondary-light to-secondary">
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <ProjectIcon type={project.service_type} />
-                  <p className="mt-2 text-xs font-medium text-white/40">
-                    {project.service_type}
-                  </p>
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent" />
+                {project.image ? (
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                    style={{ backgroundImage: `url(${project.image})` }}
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <ProjectIcon type={project.service_type} />
+                    <p className="mt-2 text-xs font-medium text-white/40">
+                      {project.service_type}
+                    </p>
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-secondary/50 to-transparent" />
                 <div className="absolute bottom-4 left-4">
                   <ServiceTag type={project.service_type} />
                 </div>

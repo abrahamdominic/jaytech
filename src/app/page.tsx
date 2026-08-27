@@ -117,6 +117,7 @@ export default async function HomePage() {
     location: p.location,
     service_type: p.service_type,
     description: p.description,
+    image: p.project_images?.[0]?.image_url,
   }))
 
   const mappedReviews = reviews.map((r) => ({

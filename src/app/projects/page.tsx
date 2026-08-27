@@ -25,7 +25,7 @@ const PROJECTS_FALLBACK = [
     project_images: [
       {
         id: "1",
-        image_url: "/images/projects/solar-lekki.jpg",
+        image_url: "/images/jay10.jpeg",
         caption: "Solar panels installed on rooftop",
         display_order: 0,
       },
@@ -43,7 +43,7 @@ const PROJECTS_FALLBACK = [
     project_images: [
       {
         id: "2",
-        image_url: "/images/projects/starlink-abuja.jpg",
+        image_url: "/images/jay11.jpeg",
         caption: "Starlink dish installation",
         display_order: 0,
       },
@@ -61,7 +61,7 @@ const PROJECTS_FALLBACK = [
     project_images: [
       {
         id: "3",
-        image_url: "/images/projects/electrical-ikeja.jpg",
+        image_url: "/images/jay12.jpeg",
         caption: "New electrical panel installation",
         display_order: 0,
       },
@@ -79,7 +79,7 @@ const PROJECTS_FALLBACK = [
     project_images: [
       {
         id: "4",
-        image_url: "/images/projects/repair-ph.jpg",
+        image_url: "/images/jay13.jpeg",
         caption: "Inverter system maintenance",
         display_order: 0,
       },
@@ -97,7 +97,7 @@ const PROJECTS_FALLBACK = [
     project_images: [
       {
         id: "5",
-        image_url: "/images/projects/solar-ibadan.jpg",
+        image_url: "/images/jay14.jpeg",
         caption: "Hybrid solar installation",
         display_order: 0,
       },
@@ -115,7 +115,7 @@ const PROJECTS_FALLBACK = [
     project_images: [
       {
         id: "6",
-        image_url: "/images/projects/starlink-enugu.jpg",
+        image_url: "/images/jay15.jpeg",
         caption: "Residential dish mounting",
         display_order: 0,
       },
