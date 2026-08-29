@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getSupabaseAdmin } from "@/lib/supabase/admin"
 import { z } from "zod"
+import { requireRole, ADMIN_ROLES } from "@/lib/auth"
+import { rateLimit } from "@/lib/rate-limit"
 
 const reviewSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -14,6 +16,9 @@ const reviewSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    const limited = await rateLimit({ max: 5, windowMs: 60_000, key: "review" })
+    if (limited) return limited
+
     const supabaseAdmin = getSupabaseAdmin()
     const body = await request.json()
     const parsed = reviewSchema.safeParse(body)
@@ -62,9 +67,16 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
-    const supabaseAdmin = getSupabaseAdmin()
     const { searchParams } = new URL(request.url)
     const all = searchParams.get("all") === "true"
+
+    // Unapproved/private reviews may only be listed by admins.
+    if (all) {
+      const auth = await requireRole(ADMIN_ROLES)
+      if (auth.error) return auth.error
+    }
+
+    const supabaseAdmin = getSupabaseAdmin()
     const page = parseInt(searchParams.get("page") || "1", 10)
     const limit = parseInt(searchParams.get("limit") || "20", 10)
     const offset = (page - 1) * limit

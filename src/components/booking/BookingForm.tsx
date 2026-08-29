@@ -284,6 +284,10 @@ export default function BookingForm() {
       toast.success("Booking submitted successfully!")
     } catch (error) {
       const msg = error instanceof Error ? error.message : "Something went wrong"
+      if (msg === "Unauthorized") {
+        window.location.href = "/auth/login?redirect=/booking"
+        return
+      }
       if (msg.includes("not configured") || msg.includes("503")) {
         toast.error("Service temporarily unavailable. Please call us at +234 704 354 1420 to book.")
       } else {

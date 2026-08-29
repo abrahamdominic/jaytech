@@ -1,14 +1,18 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getSupabaseAdmin } from "@/lib/supabase/admin"
 import { z } from "zod"
+import { requireRole, requireAuth, ADMIN_ROLES } from "@/lib/auth"
+import { rateLimit } from "@/lib/rate-limit"
 
 function generateQuoteNumber(): string {
   const now = new Date()
   const year = now.getFullYear().toString().slice(-2)
   const month = (now.getMonth() + 1).toString().padStart(2, "0")
-  const random = Math.floor(Math.random() * 10000)
+  const random = (
+    crypto.getRandomValues(new Uint32Array(1))[0] % 1000000
+  )
     .toString()
-    .padStart(4, "0")
+    .padStart(6, "0")
   return `QT-${year}${month}-${random}`
 }
 
@@ -28,6 +32,9 @@ const quoteSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    const limited = await rateLimit({ max: 10, windowMs: 60_000, key: "quote" })
+    if (limited) return limited
+
     const supabaseAdmin = getSupabaseAdmin()
     const body = await request.json()
     const parsed = quoteSchema.safeParse(body)
@@ -43,8 +50,14 @@ export async function POST(request: NextRequest) {
     const data = parsed.data
     const quote_number = generateQuoteNumber()
 
+    // Link the quote to the authenticated user when present so customers can
+    // later view/quote/pay for it. Public (guest) submissions remain allowed.
+    const auth = await requireAuth()
+    const customer_id = auth.error ? null : auth.user.id
+
     const { error } = await supabaseAdmin.from("quotes").insert({
       quote_number,
+      customer_id,
       service_name: data.service_name,
       service_id: data.service_id || null,
       full_name: data.full_name,
@@ -90,6 +103,9 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
+    const auth = await requireRole(ADMIN_ROLES)
+    if (auth.error) return auth.error
+
     const supabaseAdmin = getSupabaseAdmin()
     const { searchParams } = new URL(request.url)
     const status = searchParams.get("status")

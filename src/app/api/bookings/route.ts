@@ -1,15 +1,19 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getSupabaseAdmin } from "@/lib/supabase/admin"
 import { z } from "zod"
+import { requireAuth, requireRole, ADMIN_ROLES } from "@/lib/auth"
+import { rateLimit } from "@/lib/rate-limit"
 import type { Booking, BookingUpload } from "@/types/database"
 
 function generateBookingNumber(): string {
   const now = new Date()
   const year = now.getFullYear().toString().slice(-2)
   const month = (now.getMonth() + 1).toString().padStart(2, "0")
-  const random = Math.floor(Math.random() * 10000)
+  const random = (
+    crypto.getRandomValues(new Uint32Array(1))[0] % 1000000
+  )
     .toString()
-    .padStart(4, "0")
+    .padStart(6, "0")
   return `JT-${year}${month}-${random}`
 }
 
@@ -48,7 +52,12 @@ const SERVICE_NAMES: Record<string, string> = {
 
 export async function POST(request: NextRequest) {
   try {
-    const supabaseAdmin = getSupabaseAdmin()
+    const limited = await rateLimit({ max: 10, windowMs: 60_000, key: "booking" })
+    if (limited) return limited
+
+    const auth = await requireAuth()
+    if (auth.error) return auth.error
+
     const body = await request.json()
     const parsed = bookingSchema.safeParse(body)
 
@@ -67,10 +76,12 @@ export async function POST(request: NextRequest) {
       ...data.project_details,
     }
 
+    const supabaseAdmin = getSupabaseAdmin()
     const { data: booking, error: bookingError } = await supabaseAdmin
       .from("bookings")
       .insert({
         booking_number,
+        customer_id: auth.user.id,
         service_name: SERVICE_NAMES[data.service_type],
         service_type: data.service_type,
         description: data.description,
@@ -137,6 +148,9 @@ export async function POST(request: NextRequest) {
 
 export async function GET(request: NextRequest) {
   try {
+    const auth = await requireRole(ADMIN_ROLES)
+    if (auth.error) return auth.error
+
     const supabaseAdmin = getSupabaseAdmin()
     const { searchParams } = new URL(request.url)
     const status = searchParams.get("status")

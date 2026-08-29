@@ -25,7 +25,12 @@ type LoginFormData = z.infer<typeof loginSchema>;
 export default function LoginClient() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const redirect = searchParams.get("redirect") || "/dashboard";
+  const rawRedirect = searchParams.get("redirect") || "/dashboard";
+  // Open-redirect guard: only allow same-site absolute paths.
+  const redirect =
+    rawRedirect.startsWith("/") && !rawRedirect.startsWith("//") && !/^\/\//.test(rawRedirect)
+      ? rawRedirect
+      : "/dashboard";
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 

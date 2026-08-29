@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getSupabaseAdmin } from "@/lib/supabase/admin"
+import { requireRole, ADMIN_ROLES } from "@/lib/auth"
 
 interface RouteParams {
   params: Promise<{ id: string }>
@@ -7,6 +8,9 @@ interface RouteParams {
 
 export async function GET(_request: NextRequest, { params }: RouteParams) {
   try {
+    const auth = await requireRole(ADMIN_ROLES)
+    if (auth.error) return auth.error
+
     const supabaseAdmin = getSupabaseAdmin()
     const { id } = await params
 
@@ -42,6 +46,9 @@ export async function GET(_request: NextRequest, { params }: RouteParams) {
 
 export async function PATCH(request: NextRequest, { params }: RouteParams) {
   try {
+    const auth = await requireRole(ADMIN_ROLES)
+    if (auth.error) return auth.error
+
     const supabaseAdmin = getSupabaseAdmin()
     const { id } = await params
     const body = await request.json()

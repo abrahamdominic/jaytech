@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getSupabaseAdmin } from "@/lib/supabase/admin"
+import { requireRole, ADMIN_ROLES } from "@/lib/auth"
 
 const COMPANY_INFO = {
   name: "J Tech Solar, Starlink & CCTV Hub",
@@ -15,6 +16,9 @@ interface RouteParams {
 
 export async function GET(_request: NextRequest, { params }: RouteParams) {
   try {
+    const auth = await requireRole(ADMIN_ROLES)
+    if (auth.error) return auth.error
+
     const supabaseAdmin = getSupabaseAdmin()
     const { id } = await params
 

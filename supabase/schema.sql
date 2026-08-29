@@ -24,14 +24,38 @@ create table public.profiles (
 
 alter table public.profiles enable row level security;
 
-create policy "Public profiles are viewable by everyone"
-  on public.profiles for select using (true);
+-- Minimal public profile data is preferable, but the app historically exposes
+-- profile fields on public pages. Keep select scoped to the owning user plus a
+-- deliberately limited public projection via a separate security definer view
+-- is out of scope here, so we restrict full select to the user themselves and
+-- admins. Public page data should be read through the public API routes (RLS
+-- is not the boundary for those); see audit-report.md.
+create policy "Users can view own profile"
+  on public.profiles for select using (auth.uid() = id);
 
-create policy "Users can update own profile"
-  on public.profiles for update using (auth.uid() = id);
+create policy "Admins can view all profiles"
+  on public.profiles for select using (
+    exists (
+      select 1 from public.profiles
+      where id = auth.uid() and role in ('admin', 'super_admin')
+    )
+  );
 
+-- Forbid privilege escalation. `role` may never be set to a privileged value
+-- by the client. Inserting/updating must keep the authenticated user's own id
+-- AND only allow a non-privileged role. The `role` column is additionally made
+-- immutable (except via server-side service role) through a BEFORE trigger.
 create policy "Users can insert own profile"
-  on public.profiles for insert with check (auth.uid() = id);
+  on public.profiles for insert with check (
+    auth.uid() = id
+    and role = 'customer'
+  );
+
+create policy "Users can update own non-privileged profile"
+  on public.profiles for update using (auth.uid() = id) with check (
+    auth.uid() = id
+    and role = 'customer'
+  );
 
 -- ============================================
 -- SETTINGS
@@ -259,8 +283,10 @@ create policy "Customers can view own bookings"
     auth.uid() = customer_id
   );
 
-create policy "Customers can create bookings"
-  on public.bookings for insert with check (true);
+create policy "Customers can create own bookings"
+  on public.bookings for insert with check (
+    auth.uid() = customer_id
+  );
 
 create policy "Admins can manage all bookings"
   on public.bookings for all using (
@@ -442,7 +468,9 @@ create policy "Customers can view own quotes"
   );
 
 create policy "Anyone can submit quotes"
-  on public.quotes for insert with check (true);
+  on public.quotes for insert with check (
+    customer_id is null or auth.uid() = customer_id
+  );
 
 create policy "Admins can manage quotes"
   on public.quotes for all using (
@@ -796,8 +824,11 @@ create trigger set_updated_at before update on public.settings
 -- Generate booking number
 create or replace function generate_booking_number()
 returns trigger as $$
+declare
+  rand_num text;
 begin
-  new.booking_number := 'JT-' || to_char(now(), 'YYMM') || '-' || lpad(floor(random() * 10000)::text, 4, '0');
+  rand_num := lpad(floor(random() * 1000000)::int::text, 6, '0');
+  new.booking_number := 'JT-' || to_char(now(), 'YYMM') || '-' || rand_num;
   return new;
 end;
 $$ language plpgsql;
@@ -808,8 +839,11 @@ create trigger set_booking_number before insert on public.bookings
 -- Generate quote number
 create or replace function generate_quote_number()
 returns trigger as $$
+declare
+  rand_num text;
 begin
-  new.quote_number := 'JTQ-' || to_char(now(), 'YYMM') || '-' || lpad(floor(random() * 10000)::text, 4, '0');
+  rand_num := lpad(floor(random() * 1000000)::int::text, 6, '0');
+  new.quote_number := 'JTQ-' || to_char(now(), 'YYMM') || '-' || rand_num;
   return new;
 end;
 $$ language plpgsql;
@@ -820,8 +854,11 @@ create trigger set_quote_number before insert on public.quotes
 -- Generate invoice number
 create or replace function generate_invoice_number_trigger()
 returns trigger as $$
+declare
+  rand_num text;
 begin
-  new.invoice_number := 'JTI-' || to_char(now(), 'YYMM') || '-' || lpad(floor(random() * 10000)::text, 4, '0');
+  rand_num := lpad(floor(random() * 1000000)::int::text, 6, '0');
+  new.invoice_number := 'JTI-' || to_char(now(), 'YYMM') || '-' || rand_num;
   return new;
 end;
 $$ language plpgsql;

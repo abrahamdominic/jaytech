@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getSupabaseAdmin } from "@/lib/supabase/admin"
 import { z } from "zod"
+import { rateLimit } from "@/lib/rate-limit"
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -13,6 +14,9 @@ const contactSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    const limited = await rateLimit({ max: 5, windowMs: 60_000, key: "contact" })
+    if (limited) return limited
+
     const supabaseAdmin = getSupabaseAdmin()
     const body = await request.json()
     const parsed = contactSchema.safeParse(body)
